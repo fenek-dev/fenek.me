@@ -1,6 +1,15 @@
 import React from 'react';
+import { NavButton, Navbar } from 'shared';
 import 'styles/dist.css';
 
 export default function Home() {
-  return <h1 className="text-center text-4xl text-blue-700">Hello</h1>;
+  return (
+    <Navbar>
+      <NavButton>+</NavButton>
+      <NavButton>+</NavButton>
+      <NavButton>+</NavButton>
+      <NavButton>+</NavButton>
+      <NavButton>+</NavButton>
+    </Navbar>
+  );
 }

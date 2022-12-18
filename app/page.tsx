@@ -1,15 +1,11 @@
-import React from 'react';
-import { NavButton, Navbar } from 'shared';
 import 'styles/dist.css';
+import 'styles/globals.css';
+import React from 'react';
 
 export default function Home() {
   return (
-    <Navbar>
-      <NavButton>+</NavButton>
-      <NavButton>+</NavButton>
-      <NavButton>+</NavButton>
-      <NavButton>+</NavButton>
-      <NavButton>+</NavButton>
-    </Navbar>
+    <>
+      <h1>Hello, World</h1>
+    </>
   );
 }

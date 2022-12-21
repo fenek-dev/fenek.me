@@ -1,4 +1,4 @@
-import { Folder } from 'shared';
+import { Folder, Page } from 'shared';
 
 export default function RootLayout({
   children,
@@ -13,14 +13,16 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fenek</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
           rel="stylesheet"
         ></link>
       </head>
-      <body className="flex h-screen w-full items-center justify-center bg-orange-100">
-        <Folder>{children}</Folder>
+      <body className="flex w-full items-center justify-center bg-orange-100">
+        <Folder>
+          <Page>{children}</Page>
+        </Folder>
       </body>
     </html>
   );

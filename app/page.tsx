@@ -1,5 +1,3 @@
-import 'styles/dist.css';
-import 'styles/globals.css';
 import React from 'react';
 
 export default function Home() {
@@ -9,8 +7,8 @@ export default function Home() {
         Declassified
       </div>
 
-      <h1 className="text-center text-3xl uppercase tracking-wider md:text-6xl">
-        Special Investigation File
+      <h1 className="break-words text-center text-3xl uppercase tracking-wider md:text-6xl">
+        Special <br /> Investigation <br /> File
       </h1>
 
       <div className="my-10 rounded-md border-2 border-slate-800 px-2 py-4 text-lg tracking-widest md:px-4 md:py-8 md:text-xl">

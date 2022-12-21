@@ -6,7 +6,16 @@ html {
   font-family: 'Special Elite', serif;
 }
 
-.page-left {
+/* feTurbulence doesn't work correctly in safari */
+@supports (-webkit-hyphens: none) {
+  *,
+  *::before,
+  *::after {
+    filter: none !important;
+  }
+}
+
+.page-left::before {
   background-image: linear-gradient(
     to left,
     rgba(0, 0, 0, 0.15) 0%,

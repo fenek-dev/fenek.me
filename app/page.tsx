@@ -27,9 +27,9 @@ export default function Home() {
         </p>
       </div>
       <div className="my-14 rounded-md border-2 border-slate-800 px-2 py-4 text-lg tracking-widest md:px-4 md:py-8 md:text-xl">
-        <h4 className=" text-xl tracking-wider md:text-2xl">
+        <h2 className=" text-xl tracking-wider md:text-2xl">
           This information is:
-        </h4>
+        </h2>
         <ul className="ml-4 mt-2 flex flex-col gap-2">
           <li>Non-Restricted</li>
           <li>Non-Confidential</li>

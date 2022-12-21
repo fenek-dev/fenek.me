@@ -1,10 +1,6 @@
 import 'styles/dist.css';
 import 'styles/globals.css';
 import { Folder, Page } from 'shared';
-import { Special_Elite } from '@next/font/google';
-import cn from 'classnames';
-
-const font = Special_Elite({ subsets: ['latin'], weight: '400' });
 
 export default function RootLayout({
   children,
@@ -17,14 +13,21 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Arthur Vorokov website" />
+        <link rel="canonical" href="https://fenek.vercel.app" />
         <title>Fenek</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body
-        className={cn(
-          'flex min-h-screen w-full items-center justify-center bg-orange-100 p-4',
-          font.className,
-        )}
-      >
+      <body className="flex min-h-screen w-full items-center justify-center bg-orange-100 p-4">
         <Folder>
           <Page>{children}</Page>
         </Folder>

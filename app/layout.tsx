@@ -1,3 +1,5 @@
+import { Folder } from 'shared';
+
 export default function RootLayout({
   children,
 }: {
@@ -17,7 +19,9 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body>{children}</body>
+      <body className="flex h-screen w-full items-center justify-center bg-orange-100">
+        <Folder>{children}</Folder>
+      </body>
     </html>
   );
 }

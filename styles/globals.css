@@ -5,3 +5,19 @@
 html {
   font-family: 'Special Elite', serif;
 }
+
+.page-left {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 10%
+  );
+}
+
+.page-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 10%
+  );
+}

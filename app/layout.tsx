@@ -19,7 +19,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body className="flex w-full items-center justify-center bg-orange-100">
+      <body className="flex min-h-screen w-full items-center justify-center bg-orange-100 p-4">
         <Folder>
           <Page>{children}</Page>
         </Folder>

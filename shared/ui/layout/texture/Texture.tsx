@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TextureProps {
+export interface TextureProps {
   id: string;
   scale: string | number;
 }

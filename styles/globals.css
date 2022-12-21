@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: 'Special Elite', serif;
-}
-
 /* feTurbulence doesn't work correctly in safari */
 @supports (-webkit-hyphens: none) {
   *,
@@ -13,20 +9,4 @@ html {
   *::after {
     filter: none !important;
   }
-}
-
-.page-left::before {
-  background-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0) 10%
-  );
-}
-
-.page-right {
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0) 10%
-  );
 }

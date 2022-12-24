@@ -1,10 +1,12 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require('tailwindcss'), require('autoprefixer')],
-  content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './page/**/*.{js,ts,jsx,tsx}',
-    './shared/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {},
-};
+  mode: 'jit',
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'], // remove unused styles in production
+  darkMode: 'media', // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}

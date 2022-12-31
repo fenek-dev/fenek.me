@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerformanceMonitor, Preload, Stats } from '@react-three/drei'
+import { OrbitControls, PerformanceMonitor, PerspectiveCamera, Preload, Stats } from '@react-three/drei'
 import { useState } from 'react'
 
 export default function Scene({ children, ...props }) {
@@ -12,7 +12,8 @@ export default function Scene({ children, ...props }) {
       <ambientLight intensity={0.75} />
       {children}
       <Preload all />
-      <OrbitControls />
+      <OrbitControls minDistance={0.5} maxDistance={1} />
+      <PerspectiveCamera makeDefault position={[0, 0, 0.1]} />
       <Stats />
     </Canvas>
   )

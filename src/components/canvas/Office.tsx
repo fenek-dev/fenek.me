@@ -14,7 +14,7 @@ export default function Office(props: GroupProps) {
   const { nodes } = useGLTF('/office/office.gltf')
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, Math.PI * 1.2]} position={[1, -3, 0]}>
         <mesh castShadow receiveShadow geometry={nodes.Object_20.geometry} material={nodes.Object_20.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_12.geometry} material={nodes.Object_12.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_31.geometry} material={nodes.Object_31.material} />

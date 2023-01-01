@@ -6,12 +6,13 @@ source: https://sketchfab.com/3d-models/office-props-pack-260ff7a37a674505903708
 title: Office Props Pack
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GroupProps } from '@react-three/fiber'
 
 export default function Office(props: GroupProps) {
   const { nodes } = useGLTF('/office/office.gltf')
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, Math.PI * 1.2]} position={[1, -3, 0]}>
@@ -44,6 +45,7 @@ export default function Office(props: GroupProps) {
         <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={nodes.Object_7.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_18.geometry} material={nodes.Object_18.material} />
       </group>
+      {/* <directionalLight args={['white', 0.2]} castShadow position={[-10, 10, 0]} /> */}
     </group>
   )
 }

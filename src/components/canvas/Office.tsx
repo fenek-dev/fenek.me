@@ -6,17 +6,38 @@ source: https://sketchfab.com/3d-models/office-props-pack-260ff7a37a674505903708
 title: Office Props Pack
 */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GroupProps } from '@react-three/fiber'
+import { EffectComposer, Outline, Select, Selection } from '@react-three/postprocessing'
 
 export default function Office(props: GroupProps) {
+  const [hovered, hover] = useState(null)
   const { nodes } = useGLTF('/office/office.gltf')
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'auto'
+  }, [hovered])
 
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, Math.PI * 1.2]} position={[1, -3, 0]}>
         <mesh castShadow receiveShadow geometry={nodes.Object_20.geometry} material={nodes.Object_20.material} />
+        <Selection>
+          <EffectComposer multisample={8} autoClear={false}>
+            <Outline blur visibleEdgeColor='white' edgeStrength={100} width={500} />
+          </EffectComposer>
+          <Select enabled={hovered}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_9.geometry}
+              material={nodes.Object_9.material}
+              onPointerOver={({}) => hover(true)}
+              onPointerOut={() => hover(false)}
+            />
+          </Select>
+        </Selection>
         <mesh castShadow receiveShadow geometry={nodes.Object_12.geometry} material={nodes.Object_12.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_31.geometry} material={nodes.Object_31.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_5.geometry} material={nodes.Object_5.material} />
@@ -41,7 +62,6 @@ export default function Office(props: GroupProps) {
         <mesh castShadow receiveShadow geometry={nodes.Object_4.geometry} material={nodes.Object_4.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_11.geometry} material={nodes.Object_11.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_36.geometry} material={nodes.Object_36.material} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_9.geometry} material={nodes.Object_9.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_7.geometry} material={nodes.Object_7.material} />
         <mesh castShadow receiveShadow geometry={nodes.Object_18.geometry} material={nodes.Object_18.material} />
       </group>

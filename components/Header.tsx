@@ -2,7 +2,7 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <header className="w-full container m-auto pt-4 flex justify-between text-gray-400">
+    <header className="w-full container m-auto pt-4 flex justify-between">
       <div className="flex gap-40 text-sm uppercase">
         <span className="text-gray-300">
           Arthur <br /> Vorokov

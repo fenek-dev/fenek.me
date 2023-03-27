@@ -6,7 +6,7 @@ const font = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 
 export const Preview = () => {
   return (
-    <section className="container m-auto mt-6">
+    <section className="container mx-auto py-10 border-b-gray-400 border-b-2">
       <h1 className={cn(font.className, "text-[22vw] leading-[.9] flex")}>
         <span className="tracking-tighter">
           <span>F</span>

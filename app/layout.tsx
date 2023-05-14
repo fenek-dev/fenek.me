@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fira.className} bg-main-active`}>
-        <main className="container mx-auto min-h-screen">{children}</main>
+        <main className="container mx-auto">{children}</main>
         <Navigation />
       </body>
     </html>

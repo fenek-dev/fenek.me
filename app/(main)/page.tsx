@@ -11,13 +11,13 @@ const Main = () => {
   return (
     <section className="container p-10 px-40">
       <Code className="fixed top-1 left-1 inline">{header}</Code>
-      <h1 className="text-7xl text-stone-400 leading-normal font-bold absolute top-1/2 -translate-y-1/2">
-        <Code className="leading-none text-base -m-4">{"<h1>"}</Code>
-        Hi, <br />
-        I'm Arthur, <br />
-        Frontend Developer
-        <Code className="leading-none text-base -m-4">{"</h1>"}</Code>
-      </h1>
+      <header className="absolute top-1/2 -translate-y-1/2">
+        <h1 className="text-7xl text-stone-400 leading-normal font-bold ">
+          Hi, <br />
+          I'm Arthur <br />
+        </h1>
+        <h2 className="text-4xl text-stone-600">Front-end Developer</h2>
+      </header>
     </section>
   );
 };

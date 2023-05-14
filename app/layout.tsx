@@ -1,11 +1,12 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
+import { Navigation } from "./_modules/shared/molecules/Navigation";
+import "./globals.scss";
+import { Fira_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const fira = Fira_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-  title: "Fenek",
-  description: "Fenek",
+  title: "Fenek | Front-end Developer",
+  description: "Fenek Front-end Developer",
 };
 
 export default function RootLayout({
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${fira.className} bg-main-active`}>
+        <main className="container mx-auto min-h-screen">{children}</main>
+        <Navigation />
+      </body>
     </html>
   );
 }

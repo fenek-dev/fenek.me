@@ -9,4 +9,4 @@ const Projects = () => {
   );
 };
 
-export default React.forwardRef(Projects);
+export default Projects;

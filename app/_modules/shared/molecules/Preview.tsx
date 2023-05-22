@@ -12,11 +12,11 @@ export const Preview = () => {
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
   return (
     <div className="w-screen leading-none">
       <div className="">

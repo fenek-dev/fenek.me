@@ -21,7 +21,7 @@ export const PopAnimatedText = ({
           transition={{
             type: "spring",
             stiffness: 100,
-            duration: 0.2,
+            duration: 0.1,
             delay: 0.1 * index + delay,
           }}
           key={index}

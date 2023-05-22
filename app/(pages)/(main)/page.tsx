@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import AnimatedPage from "../../_modules/app/routes/AnimatedPage";
-import { Preview } from "@/app/_modules/shared/atoms/Preview";
+import { Preview } from "@/app/_modules/shared/molecules/Preview";
 
 const Main = () => {
   return (

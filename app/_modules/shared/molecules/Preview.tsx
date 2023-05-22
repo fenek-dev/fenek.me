@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { PopAnimatedText } from "../atoms/PopAnimatedText";
 
 export const Preview = () => {
   const [transform, setTransform] = useState("");
@@ -27,7 +28,7 @@ export const Preview = () => {
                 transform,
               }}
             >
-              FRONTEND
+              <PopAnimatedText text="FRONTEND" />
             </span>
           </div>
         </div>
@@ -39,7 +40,7 @@ export const Preview = () => {
                 transform,
               }}
             >
-              FRONTEND
+              <PopAnimatedText text="FRONTEND" />
             </span>
           </div>
         </div>
@@ -53,7 +54,7 @@ export const Preview = () => {
                 transform,
               }}
             >
-              DEVELOPER
+              <PopAnimatedText delay={1} text="DEVELOPER" />
             </span>
           </div>
         </div>
@@ -65,7 +66,7 @@ export const Preview = () => {
                 transform,
               }}
             >
-              DEVELOPER
+              <PopAnimatedText delay={1} text="DEVELOPER" />
             </span>
           </div>
         </div>

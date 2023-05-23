@@ -1,21 +1,24 @@
 import { motion } from "framer-motion";
 import React, { useMemo } from "react";
+import cn from "classnames";
 
 interface PopAnimatedTextProps {
   text: string;
   delay?: number;
+  className?: string;
 }
 
 export const PopAnimatedText = ({
   text,
   delay = 0.2,
+  className,
 }: PopAnimatedTextProps) => {
   const letters = useMemo(() => text.split(""), [text]);
   return (
     <>
       {letters.map((letter, index) => (
         <motion.span
-          className="inline-block"
+          className={cn("inline-block", className)}
           initial={{ scale: 0, y: 50, opacity: 0 }}
           animate={{ scale: 1, y: 0, opacity: 1 }}
           transition={{

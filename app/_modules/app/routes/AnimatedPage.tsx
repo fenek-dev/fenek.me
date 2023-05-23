@@ -16,7 +16,7 @@ function AnimatedPage(
   const transition = { duration: 0.5, ease: "easeInOut" };
 
   return (
-    <motion.span
+    <motion.div
       ref={ref}
       initial={onTheRight}
       animate={inTheCenter}
@@ -25,7 +25,7 @@ function AnimatedPage(
       {...rest}
     >
       {children}
-    </motion.span>
+    </motion.div>
   );
 }
 

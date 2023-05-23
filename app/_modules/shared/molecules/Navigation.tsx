@@ -17,9 +17,8 @@ export const Navigation = () => {
     >
       <ul className="flex gap-2">
         {ROUTES.map(({ href, Icon, title, divide, blank }, index) => (
-          <>
+          <React.Fragment key={index}>
             <motion.li
-              key={href}
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{
@@ -59,7 +58,7 @@ export const Navigation = () => {
               </NavLink>
             </motion.li>
             {divide && <span className="h-full w-px bg-neutral-700 mx-1" />}
-          </>
+          </React.Fragment>
         ))}
       </ul>
     </motion.nav>

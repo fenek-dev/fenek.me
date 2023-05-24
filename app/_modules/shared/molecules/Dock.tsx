@@ -5,7 +5,7 @@ import { ROUTES } from "../../app/routes/links";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-export const Navigation = () => {
+export const Dock = () => {
   const pathname = usePathname();
 
   return (

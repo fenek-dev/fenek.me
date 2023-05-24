@@ -15,9 +15,9 @@ const partAnimation = (index: number) => ({
   transition: {
     type: "spring",
     stiffness: 100,
-    duration: 0.4,
+    duration: 0.3,
     mass: 0.5,
-    delay: 0.5 + 0.3 * index,
+    delay: 0.3 + 0.2 * index,
   },
 });
 
@@ -156,7 +156,7 @@ export const Brain = () => {
           d="M1392 725.5L1370 766L1371.5 838.5L1365 893L1347.5 1014L1375.5 1058.5L1432.5 1100.5L1523 1089L1570 1043L1582.5 1048.5L1590 1089L1637.5 1090.5L1683 1061L1717.5 950.5L1693 854L1671.5 820.5L1614.5 778.5L1570 773.5L1548.5 763.5L1498.5 759.5V733L1478.5 705H1448L1392 725.5Z"
           className="fill-black/0 hover:fill-amber-800/70 transition-[fill]"
           id="bundler"
-          aria-label="Webpack / Vite"
+          aria-label="Webpack/Vite"
           onMouseMove={onMouseMove}
           onMouseOut={onMouseOut}
         />
@@ -164,7 +164,7 @@ export const Brain = () => {
           d="M1745.5 965.5L1715 959.5V931.5L1694.5 859L1673 824.5L1608 776L1572.5 773.5L1552 766L1498.5 757V735.5L1481 706.5L1428.5 678.5L1337 631L1301.5 627.5L1270 534.5L1299 503L1366.5 500.5L1416 517L1446.5 500.5L1520.5 534.5L1605.5 609.5L1629.5 649L1694.5 759.5L1768.5 856.5L1762 927.5L1745.5 965.5Z"
           className="fill-black/0 hover:fill-amber-800/70 transition-[fill]"
           id="nx"
-          aria-label="nx"
+          aria-label="Nx"
           onMouseMove={onMouseMove}
           onMouseOut={onMouseOut}
         />

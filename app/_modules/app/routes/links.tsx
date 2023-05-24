@@ -1,13 +1,9 @@
-import {
-  ContactIcon,
-  HomeIcon,
-  ProjectsIcon,
-  SkillsIcon,
-  LinkedInIcon,
-  MainIcon,
-  TelegramIcon,
-} from "../assets/icons";
-
+import HomeIcon from "../assets/icons/home.svg";
+import SkillsIcon from "../assets/icons/skills.svg";
+import ProjectsIcon from "../assets/icons/projects.svg";
+import TelegramIcon from "../assets/icons/telegram.svg";
+import MainIcon from "../assets/icons/mail.svg";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
 export interface RouteType {
   href: string;
   Icon: React.FC<React.ComponentProps<"svg">>;

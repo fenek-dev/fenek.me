@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { Navigation } from "./_modules/shared/molecules/Navigation";
 import "./globals.scss";
+import { Metadata } from "next";
+import { Dock } from "./_modules/shared/molecules/Dock";
 import { Fira_Mono } from "next/font/google";
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: ["400", "700"] });
@@ -25,9 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fira.className} bg-main-active`}>
+      <body className={fira.className}>
         <main className="container mx-auto">{children}</main>
-        <Navigation />
+        <Dock />
       </body>
     </html>
   );

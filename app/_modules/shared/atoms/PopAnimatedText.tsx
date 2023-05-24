@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import React, { useMemo } from "react";
 import cn from "classnames";
@@ -10,7 +11,7 @@ interface PopAnimatedTextProps {
 
 export const PopAnimatedText = ({
   text,
-  delay = 0.05,
+  delay = 0,
   className,
 }: PopAnimatedTextProps) => {
   const letters = useMemo(() => text.split(""), [text]);
@@ -25,7 +26,7 @@ export const PopAnimatedText = ({
             type: "spring",
             stiffness: 100,
             duration: 0.1,
-            delay: 0.1 * index + delay,
+            delay: 0.05 * index + delay,
           }}
           key={index}
         >

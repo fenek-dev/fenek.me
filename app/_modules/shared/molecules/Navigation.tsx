@@ -14,6 +14,7 @@ export const Navigation = () => {
       initial={{ bottom: "-5rem" }}
       animate={{ bottom: "1.5rem" }}
       transition={{ type: "spring", stiffness: 100, duration: 0.2 }}
+      aria-label="Main"
     >
       <ul className="flex gap-2">
         {ROUTES.map(({ href, Icon, title, divide, blank }, index) => (
@@ -35,11 +36,11 @@ export const Navigation = () => {
               }}
             >
               <NavLink
-                aria-checked={pathname === href}
+                data-checked={pathname === href}
                 href={href}
                 blank={blank}
                 className="group relative 
-              aria-checked:before:block before:hidden before:w-1 before:h-1 before:rounded before:bg-stone-500 before:absolute before:bottom-1"
+              data-[checked=true]:before:block before:hidden before:w-1 before:h-1 before:rounded before:bg-stone-500 before:absolute before:bottom-1"
                 title={title}
                 whileHover={{
                   scale: 2,

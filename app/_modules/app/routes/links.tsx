@@ -4,6 +4,8 @@ import ProjectsIcon from "../assets/icons/projects.svg";
 import TelegramIcon from "../assets/icons/telegram.svg";
 import MainIcon from "../assets/icons/mail.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
+import GithubIcon from "../assets/icons/github.svg";
+
 export interface RouteType {
   href: string;
   Icon: React.FC<React.ComponentProps<"svg">>;
@@ -44,6 +46,12 @@ export const ROUTES: RouteType[] = [
     href: "https://www.linkedin.com/in/fenek",
     Icon: LinkedInIcon,
     title: "LinkedIn",
+    blank: true,
+  },
+  {
+    href: "https://github.com/MaksFenek",
+    Icon: GithubIcon,
+    title: "Github",
     blank: true,
   },
 ];

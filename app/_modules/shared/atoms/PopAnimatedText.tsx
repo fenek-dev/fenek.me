@@ -10,7 +10,7 @@ interface PopAnimatedTextProps {
 
 export const PopAnimatedText = ({
   text,
-  delay = 0.2,
+  delay = 0.05,
   className,
 }: PopAnimatedTextProps) => {
   const letters = useMemo(() => text.split(""), [text]);

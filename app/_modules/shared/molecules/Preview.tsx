@@ -18,7 +18,7 @@ export const Preview = () => {
   }, []);
 
   return (
-    <div className="w-screen leading-none">
+    <div className="w-screen leading-none select-none">
       <div className="">
         <div className="w-1/2 overflow-hidden inline-block -skew-y-12 text-stone-300">
           <div className="w-screen">

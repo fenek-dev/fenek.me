@@ -1,12 +1,10 @@
-import { Heart } from "@/app/_modules/shared/atoms/Heart";
-import { SkillMap } from "@/app/_modules/shared/molecules/SkillMap";
+import { Brain } from "@/app/_modules/shared/molecules/Brain";
 import React from "react";
 
 const Skills = () => {
   return (
     <div className="min-h-screen">
-      <SkillMap />
-      <Heart />
+      <Brain />
     </div>
   );
 };

@@ -57,7 +57,7 @@ export const Navigation = () => {
                 <Icon className="fill-stone-500 group-hover:fill-stone-400 transition-all duration-300" />
               </NavLink>
             </motion.li>
-            {divide && <span className="h-full w-px bg-neutral-700 mx-1" />}
+            {divide && <li className="h-full w-px bg-neutral-700 mx-1" />}
           </React.Fragment>
         ))}
       </ul>

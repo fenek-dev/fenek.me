@@ -42,7 +42,7 @@ export const Brain = () => {
   return (
     <>
       <motion.svg
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[750px] w-[350px]"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 md:w-[750px] w-[350px]"
         width="750"
         height="750"
         viewBox="0 0 2000 2000"

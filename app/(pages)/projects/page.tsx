@@ -4,7 +4,7 @@ import React from "react";
 const Projects = () => {
   return (
     <div className="text-white overflow-x-clip">
-      <div className="md:py-36 py-16 flex flex-col md:gap-40 gap-20">
+      <div className="md:py-24 py-16 flex flex-col md:gap-40 gap-20">
         <ProjectLine
           href="https://business.appintheair.com"
           technologies={[

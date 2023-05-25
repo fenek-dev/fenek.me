@@ -95,8 +95,8 @@ export const Brain = () => {
             className="fill-cyan-400/50 group-hover:fill-cyan-800/70 transition-[fill]"
             stroke-linejoin="round"
           />
-          <text dy="2" dx="5730" fill="white">
-            <textPath href="#textcircle">Next.js</textPath>
+          <text dy="30" dx="70" fill="white">
+            <textPath href="#textcircle-reverse">Next.js</textPath>
           </text>
         </motion.g>
         <motion.g className="group" {...partAnimation(2)}>
@@ -112,8 +112,8 @@ export const Brain = () => {
             className="fill-cyan-400/50 group-hover:fill-cyan-800/70 transition-[fill]"
             stroke-linejoin="round"
           />
-          <text dy="2" dx="5380" fill="white">
-            <textPath href="#textcircle">Redux</textPath>
+          <text dy="30" dx="480" fill="white">
+            <textPath href="#textcircle-reverse">Redux</textPath>
           </text>
         </motion.g>
         <motion.g className="group" {...partAnimation(3)}>
@@ -129,8 +129,8 @@ export const Brain = () => {
             className="fill-cyan-400/50 group-hover:fill-cyan-800/70 transition-[fill]"
             stroke-linejoin="round"
           />
-          <text dy="2" dx="5000" fill="white">
-            <textPath href="#textcircle">Framer</textPath>
+          <text dy="30" dx="850" fill="white">
+            <textPath href="#textcircle-reverse">Framer</textPath>
           </text>
         </motion.g>
 
@@ -154,8 +154,8 @@ export const Brain = () => {
             stroke-linejoin="round"
           />
 
-          <text dy="1" dx="4640" fill="white">
-            <textPath href="#textcircle">Jest</textPath>
+          <text dy="35" dx="1250" fill="white">
+            <textPath href="#textcircle-reverse">Jest</textPath>
           </text>
         </motion.g>
 
@@ -173,8 +173,8 @@ export const Brain = () => {
             stroke-linejoin="round"
           />
 
-          <text dy="5" dx="4190" fill="white">
-            <textPath href="#textcircle">Storybook</textPath>
+          <text dy="30" dx="1550" fill="white">
+            <textPath href="#textcircle-reverse">Storybook</textPath>
           </text>
         </motion.g>
 
@@ -192,8 +192,8 @@ export const Brain = () => {
             stroke-linejoin="round"
           />
 
-          <text dy="5" dx="3930" fill="white">
-            <textPath href="#textcircle">Nx</textPath>
+          <text dy="30" dx="2040" fill="white">
+            <textPath href="#textcircle-reverse">Nx</textPath>
           </text>
         </motion.g>
 
@@ -211,8 +211,8 @@ export const Brain = () => {
             stroke-linejoin="round"
           />
 
-          <text dy="2" dx="3470" fill="white">
-            <textPath href="#textcircle">Webpack</textPath>
+          <text dy="30" dx="2340" fill="white">
+            <textPath href="#textcircle-reverse">Webpack</textPath>
           </text>
         </motion.g>
 
@@ -236,8 +236,8 @@ export const Brain = () => {
             className="fill-purple-400/50 group-hover:fill-purple-800/70 transition-[fill]"
             stroke-linejoin="round"
           />
-          <text dy="3" dx="3090" fill="white">
-            <textPath href="#textcircle">Nest.js</textPath>
+          <text dy="25" dx="2720" fill="white">
+            <textPath href="#textcircle-reverse">Nest.js</textPath>
           </text>
         </motion.g>
 
@@ -370,13 +370,16 @@ export const Brain = () => {
           </text>
         </motion.g>
 
-        <g className="text-[3.5rem]">
-          <path
-            d="M34.303,1001.1a961.414,961.414 0 1,0 1922.828,0a961.414,961.414 0 1,0 -1922.828,0"
-            fill="none"
-            id="textcircle"
-          />
-        </g>
+        <path
+          d="M34.303,1001.1a961.414,961.414 0 1,0 1922.828,0a961.414,961.414 0 1,0 -1922.828,0"
+          fill="none"
+          id="textcircle"
+        />
+        <path
+          d="M34.302999999999884,1001.1A961.414,961.414 0 1 11957.1309999999999,1001.1A961.414,961.414 0 1 134.303,1001.1"
+          fill="none"
+          id="textcircle-reverse"
+        />
         <defs>
           <pattern
             id="pattern0"

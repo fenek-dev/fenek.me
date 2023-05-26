@@ -8,6 +8,11 @@
     }
 }
 
+.vertical-lr {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
 html {
     --s: 50px;
     --c: #1f2428;

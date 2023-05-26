@@ -10,7 +10,7 @@ export const Dock = () => {
 
   return (
     <motion.nav
-      className="p-2 flex fixed bottom-6 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 rounded-full bg-opacity-80"
+      className="p-2 flex fixed bottom-6 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 rounded-full bg-opacity-80 z-50"
       initial={{ bottom: "-5rem" }}
       animate={{ bottom: "1.5rem" }}
       transition={{ type: "spring", stiffness: 100, duration: 0.2 }}

@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 
 export const AppInTheAirSection = () => {
   return (
-    <div className="min-h-screen snap-start md:p-20 relative overflow-hidden">
+    <div className="min-h-screen snap-start md:p-20 p-10 relative overflow-hidden">
       <motion.span
-        className="inline-block absolute top-1/2 right-1/4 -translate-y-1/2 translate-x-1/4"
+        className="inline-block absolute sm:scale-100 scale-75 top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2   -translate-y-1/4 right-1/2"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", delay: 0.9, duration: 1 }}
       >
-        <SectionSvg className="scale-[1.75] absolute top-1/2 right-1/4 -translate-y-1/2 translate-x-1/4 fill-stone-400 hover:fill-red-600/50 transition-all duration-300" />
+        <SectionSvg className="lg:scale-[1.75] sm:scale-100 scale-75 absolute top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2 fill-stone-400 hover:fill-red-600/50 transition-all duration-300 -translate-y-1/4 translate-x-1/2 right-1/2" />
       </motion.span>
       <motion.div
         initial={{ height: "0%", marginTop: "-4rem" }}
         animate={{ height: "100%", marginTop: "0rem" }}
         transition={{ duration: 0.3, delay: 0.3 }}
-        className="absolute top-0 bottom-0 left-20 bg-stone-900 w-[36rem] p-8 px-12 overflow-hidden"
+        className="absolute top-0 bottom-0 md:left-20 bg-stone-900/80 lg:w-[36rem] md:w-[30rem] inset-10 p-8 px-12 overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -29,7 +29,7 @@ export const AppInTheAirSection = () => {
             initial={{ y: "-200%" }}
             animate={{ y: "0%" }}
             transition={{ type: "spring", delay: 0.8, duration: 0.5 }}
-            className="text-stone-500 sm:text-2xl text-lg vertical-lr absolute top-8 left-2 whitespace-nowrap overflow-hidden"
+            className="text-stone-500 lg:text-xl text-lg vertical-lr absolute top-8 left-2 whitespace-nowrap overflow-hidden"
           >
             Jan 2022 - Jan 2023 | 1 year
           </motion.span>
@@ -37,7 +37,7 @@ export const AppInTheAirSection = () => {
             initial={{ y: "200%", scaleX: "-1", scaleY: "-1" }}
             animate={{ y: "0%" }}
             transition={{ type: "spring", delay: 0.8, duration: 0.5 }}
-            className="vertical-lr absolute top-8 right-2 -scale-100 text-stone-500 sm:text-2xl text-lg flex gap-8"
+            className="vertical-lr absolute top-8 right-2 -scale-100 text-stone-500 lg:text-xl text-lg flex gap-8"
           >
             {["Nx", "Sass", "Redux", "TypeScript", "React"].map((item) => (
               <span
@@ -57,15 +57,15 @@ export const AppInTheAirSection = () => {
               href="https://business.appintheair.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-stone-400 lg:text-5xl md:text-xl text-base uppercase font-bold whitespace-nowrap leading-none transition-all duration-300 mb-2 group hover:text-cyan-300/50 hover:tracking-widest overflow-hidden"
+              className="inline-block text-stone-400 lg:text-5xl md:text-4xl sm:text-3xl text-2xl uppercase font-bold whitespace-nowrap leading-none transition-all duration-300 mb-2 group hover:text-cyan-300/50 hover:tracking-widest overflow-hidden"
             >
               App in the Air
               <span className="block max-w-0 group-hover:max-w-full transition-all delay-150 duration-300 h-0.5 bg-cyan-300/50"></span>
             </a>
-            <span className="mt-3 block text-stone-600 sm:text-xl text-lg">
+            <span className="lg:mt-3 md:mt-2 block text-stone-600 sm:text-xl lg:text-lg md:text-base text-sm">
               #FrontendDeveloper #B2B
             </span>
-            <p className="mt-7 text-stone-400 sm:text-2xl text-lg leading-relaxed w-full">
+            <p className="lg:mt-7 md:mt-4 text-stone-400 lg:text-2xl md:text-xl sm:text-lg text-base md:leading-relaxed leading-normal w-full">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
               quas laboriosam aspernatur ducimus itaque perferendis alias
               quisquam nesciunt eius, facilis natus exercitationem ad doloribus,

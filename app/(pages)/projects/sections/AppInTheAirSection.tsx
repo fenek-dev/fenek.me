@@ -15,10 +15,10 @@ export const AppInTheAirSection = () => {
         <SectionSvg className="lg:scale-[1.75] sm:scale-100 scale-75 absolute top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2 fill-stone-400 hover:fill-red-600/50 transition-all duration-300 -translate-y-1/4 translate-x-1/2 right-1/2" />
       </motion.span>
       <motion.div
-        initial={{ height: "0%", marginTop: "-4rem" }}
+        initial={{ height: "0%", marginTop: "-8rem" }}
         animate={{ height: "100%", marginTop: "0rem" }}
         transition={{ duration: 0.3, delay: 0.3 }}
-        className="absolute top-0 bottom-0 md:left-20 bg-stone-900/80 lg:w-[36rem] md:w-[30rem] inset-10 p-8 px-12 overflow-hidden"
+        className="absolute top-0 bottom-0 md:left-20 bg-stone-900/80 lg:w-[36rem] md:w-[30rem] inset-10 p-8 pb-24 px-12 overflow-hidden flex flex-col justify-between"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -73,6 +73,12 @@ export const AppInTheAirSection = () => {
             </p>
           </motion.div>
         </motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", delay: 1.6, duration: 0.3 }}
+          className="scroll-down mx-auto"
+        />
       </motion.div>
     </div>
   );

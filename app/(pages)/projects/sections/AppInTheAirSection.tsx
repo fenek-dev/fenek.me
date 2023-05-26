@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 export const AppInTheAirSection = () => {
   return (
     <div className="min-h-screen snap-start md:p-20 relative overflow-hidden">
-      <SectionSvg className="scale-[1.75] absolute top-1/2 right-1/4 -translate-y-1/2 translate-x-1/4  z-10 fill-stone-400" />
+      <motion.span
+        className="inline-block absolute top-1/2 right-1/4 -translate-y-1/2 translate-x-1/4"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: "spring", delay: 0.9, duration: 1 }}
+      >
+        <SectionSvg className="scale-[1.75] absolute top-1/2 right-1/4 -translate-y-1/2 translate-x-1/4 fill-stone-400 hover:fill-red-600/50 transition-all duration-300" />
+      </motion.span>
       <motion.div
         initial={{ height: "0%", marginTop: "-4rem" }}
         animate={{ height: "100%", marginTop: "0rem" }}

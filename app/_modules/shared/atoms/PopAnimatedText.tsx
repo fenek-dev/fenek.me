@@ -1,5 +1,5 @@
 "use client";
-import { LazyMotion, motion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import React, { useMemo } from "react";
 import cn from "classnames";
 
@@ -16,9 +16,9 @@ export const PopAnimatedText = ({
 }: PopAnimatedTextProps) => {
   const letters = useMemo(() => text.split(""), [text]);
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       {letters.map((letter, index) => (
-        <motion.span
+        <m.span
           className={cn("inline-block", className)}
           initial={{ scale: 0, y: 50, opacity: 0 }}
           animate={{ scale: 1, y: 0, opacity: 1 }}
@@ -31,8 +31,8 @@ export const PopAnimatedText = ({
           key={index}
         >
           {letter}
-        </motion.span>
+        </m.span>
       ))}
-    </LazyMotion>
+    </>
   );
 };

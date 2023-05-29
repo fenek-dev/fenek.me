@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import React from "react";
 
 interface ProjectLineProps {
@@ -15,7 +15,7 @@ export const ProjectLine = ({
   duration,
 }: React.PropsWithChildren<ProjectLineProps>) => {
   return (
-    <motion.div className="min-h-screen snap-start md:p-20">
+    <m.div className="min-h-screen snap-start md:p-20">
       <span className="text-stone-500 sm:text-2xl text-lg block">
         {duration}
       </span>
@@ -38,6 +38,6 @@ export const ProjectLine = ({
           </span>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };

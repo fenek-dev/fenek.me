@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import SectionSvg from "../../../_modules/app/assets/sections/section1.svg";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
 
 export const AppInTheAirSection = () => {
   return (
     <div className="min-h-screen snap-start md:p-20 p-10 relative overflow-hidden">
       <motion.span
         className="inline-block absolute sm:scale-100 scale-75 top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2   -translate-y-1/4 right-1/2"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ type: "spring", delay: 0.9, duration: 1 }}
       >
         <SectionSvg className="lg:scale-[1.75] sm:scale-100 scale-75 absolute top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2 fill-stone-400 hover:fill-red-600/50 transition-all duration-300 -translate-y-1/4 translate-x-1/2 right-1/2" />

@@ -1,18 +1,14 @@
 import { ProjectLine } from "@/app/_modules/shared/atoms/ProjectLine";
 import React from "react";
 import { AppInTheAirSection } from "./sections/AppInTheAirSection";
+import { ShopPartySection } from "./sections/ShopPartySection";
 
 const Projects = () => {
   return (
-    <div className="absolute inset-0 snap-y snap-mandatory scroll-smooth overflow-y-auto overflow-x-hidden h-screen">
+    <div className="absolute inset-0 snap-y snap-mandatory scroll-smooth overflow-y-auto overflow-x-hidden h-screen flex flex-col gap-32">
       <AppInTheAirSection />
-      <ProjectLine
-        href="https://shop.shopparty.com"
-        technologies={["B2C", "React", "TypeScript", "Redux", "Sass", "Jest"]}
-        duration="Oct 2021 - Jan 2022 | 4 months"
-      >
-        ShopParty
-      </ProjectLine>
+      <ShopPartySection />
+
       <ProjectLine
         href="https://ya.ru"
         technologies={[

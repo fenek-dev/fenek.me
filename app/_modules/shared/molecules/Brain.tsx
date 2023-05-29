@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import BrainImage from "../../app/assets/brain.webp";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
 
 const partAnimation = (index: number, duration: number = 0.3) => ({
   initial: {
@@ -40,7 +39,7 @@ export const Brain = () => {
     }
   };
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <motion.svg
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 md:w-[750px] w-[350px] text-[3.5rem] select-none"
         width="750"
@@ -404,6 +403,6 @@ export const Brain = () => {
       >
         hello
       </div>
-    </>
+    </LazyMotion>
   );
 };

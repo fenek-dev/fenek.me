@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     follow: true,
     index: true,
   },
+  openGraph: {
+    title: "Fenek | Front-end Developer",
+    description:
+      "A Frontend developer, React adept and Typescript propagandist",
+    url: "https://fenek.vercel.app",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

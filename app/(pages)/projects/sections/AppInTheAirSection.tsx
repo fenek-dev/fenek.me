@@ -66,10 +66,14 @@ export const AppInTheAirSection = () => {
               #FrontendDeveloper #B2B
             </span>
             <p className="lg:mt-7 md:mt-4 text-stone-400 lg:text-2xl md:text-xl sm:text-lg text-base md:leading-relaxed leading-normal w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-              quas laboriosam aspernatur ducimus itaque perferendis alias
-              quisquam nesciunt eius, facilis natus exercitationem ad doloribus,
-              ullam repellendus nostrum unde eum? Cupiditate.
+              I was focused on creating a B2B website connected to a mobile app.
+              As a developer, my technical stack included React, Redux,
+              TypeScript, SASS, and MUI. <br />
+              <br />I was responsible for writing our own UI, based on MUI, kit
+              to implement the design and carefully planning the architecture
+              and technical solutions for the project. I also played a crucial
+              role in moving the project into a monorepo structure to improve
+              its organization and maintainability.
             </p>
           </m.div>
         </m.div>

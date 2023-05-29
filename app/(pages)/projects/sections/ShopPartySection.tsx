@@ -75,10 +75,11 @@ export const ShopPartySection = () => {
               #FrontendDeveloper #B2C
             </span>
             <p className="lg:mt-7 md:mt-4 text-stone-400 lg:text-2xl md:text-xl sm:text-lg text-base md:leading-relaxed leading-normal w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-              quas laboriosam aspernatur ducimus itaque perferendis alias
-              quisquam nesciunt eius, facilis natus exercitationem ad doloribus,
-              ullam repellendus nostrum unde eum? Cupiditate.
+              I was responsible for developing an e-commerce new platform from
+              the ground up. This involved using React, Redux, and TypeScript to
+              create a custom UI kit and implement new features. I also wrote
+              Storybook tests to ensure the stability and reliability of the
+              platform.
             </p>
           </m.div>
         </m.div>

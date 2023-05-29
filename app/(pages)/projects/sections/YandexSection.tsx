@@ -6,22 +6,6 @@ import { m, useInView } from "framer-motion";
 export const YandexSection = () => {
   const container = useRef<HTMLDivElement>(null);
   const visible = useInView(container, { once: true });
-  {
-    /* <ProjectLine
-        href="https://ya.ru"
-        technologies={[
-          "B2B",
-          "React",
-          "TypeScript",
-          "Redux",
-          "Sass",
-          "Hermione",
-        ]}
-        duration="Jun 2021 - Oct 2021 | 5 months"
-      >
-        Yandex
-      </ProjectLine> */
-  }
   return (
     <div
       className="min-h-screen snap-start md:p-20 p-10 relative overflow-hidden"
@@ -48,7 +32,7 @@ export const YandexSection = () => {
           transition={{ delay: 0.6, duration: 0.2 }}
         >
           <m.span
-            animate={visible ? { y: "0%" } : { y: "-200%" }}
+            animate={visible ? { y: "0%" } : { y: "200%" }}
             transition={{ type: "spring", delay: 0.8, duration: 0.5 }}
             className="text-stone-500 lg:text-xl text-lg vertical-lr absolute top-8 left-2 whitespace-nowrap overflow-hidden"
           >
@@ -91,10 +75,13 @@ export const YandexSection = () => {
               #FrontendDeveloper #B2B
             </span>
             <p className="lg:mt-7 md:mt-4 text-stone-400 lg:text-2xl md:text-xl sm:text-lg text-base md:leading-relaxed leading-normal w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-              quas laboriosam aspernatur ducimus itaque perferendis alias
-              quisquam nesciunt eius, facilis natus exercitationem ad doloribus,
-              ullam repellendus nostrum unde eum? Cupiditate.
+              I was responsible for redesigning the admin side of the website
+              using a modern tech stack including React, Redux, and TypeScript.
+              <br />
+              <br />
+              My tasks included working with the legacy codebase to fix bugs and
+              implement new functionality. I also wrote comprehensive end-to-end
+              and unit tests.
             </p>
           </m.div>
         </m.div>

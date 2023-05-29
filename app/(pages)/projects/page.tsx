@@ -1,4 +1,3 @@
-import { ProjectLine } from "@/app/_modules/shared/atoms/ProjectLine";
 import React from "react";
 import { AppInTheAirSection } from "./sections/AppInTheAirSection";
 import { ShopPartySection } from "./sections/ShopPartySection";

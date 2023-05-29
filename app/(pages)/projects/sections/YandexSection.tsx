@@ -32,7 +32,7 @@ export const YandexSection = () => {
         animate={visible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ type: "spring", delay: 0.9, duration: 1 }}
       >
-        <SectionSvg className="lg:scale-[1.75] sm:scale-100 scale-75 absolute top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2 fill-stone-400 hover:fill-red-600/50 transition-all duration-300 -translate-y-1/4 translate-x-1/2 right-1/2" />
+        <SectionSvg className="lg:scale-[1.75] sm:scale-100 scale-75 absolute top-1/2 md:right-1/4 md:-translate-y-1/2 lg:translate-x-1/4 md:translate-x-1/2 hover:fill-stone-400 fill-red-600/50 transition-all duration-300 -translate-y-1/4 translate-x-1/2 right-1/2" />
       </m.span>
       <m.div
         animate={

@@ -43,12 +43,6 @@ export const ROUTES: RouteType[] = [
     title: "Mail",
   },
   {
-    href: "https://www.linkedin.com/in/fenek",
-    Icon: LinkedInIcon,
-    title: "LinkedIn",
-    blank: true,
-  },
-  {
     href: "https://github.com/MaksFenek",
     Icon: GithubIcon,
     title: "Github",

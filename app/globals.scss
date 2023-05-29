@@ -1,11 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./_modules/app/styles/global.scss";
 
 @layer components {
     .btn-rounded {
         @apply sm:w-12 sm:h-12 w-10 h-10 bg-neutral-700 rounded-full bg-gradient-to-tr from-neutral-700/50 via-neutral-700 to-neutral-800/50 shadow-inner shadow-neutral-600/60 flex justify-center items-center;
     }
+}
+
+.vertical-lr {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 }
 
 html {

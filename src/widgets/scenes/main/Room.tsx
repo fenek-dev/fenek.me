@@ -2,7 +2,7 @@ import * as THREE from "three";
 import React from "react";
 import { Instance, Instances, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { CuboidCollider, RigidBody } from "@react-three/rapier";
+import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -105,314 +105,335 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
     <group {...props} dispose={null}>
       <CuboidCollider position={[10, -1, 10]} args={[100, 1, 100]} />
       <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_window_closed_scaffold.geometry}
-          material={materials["texture.055"]}
-          position={[-10, 0, 7]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_endcap001.geometry}
-          material={materials["texture.058"]}
-          position={[-3, 0, 2]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_cracked.geometry}
-          material={materials["texture.060"]}
-          position={[-7, 0, 10]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_cracked001.geometry}
-          material={materials["texture.060"]}
-          position={[4, 0, 7]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_cracked002.geometry}
-          material={materials["texture.060"]}
-          position={[-10, 0, 3]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_Tsplit.geometry}
-          material={materials["texture.061"]}
-          position={[-3, 0, 0]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_Tsplit001.geometry}
-          material={materials["texture.061"]}
-          position={[4, 0, -1]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_window_closed_scaffold001.geometry}
-          material={materials["texture.055"]}
-          position={[0, 0, -7]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_doorway.geometry}
-          material={materials["texture.063"]}
-          position={[4, 0, -7]}
-        >
+        <MeshCollider type="hull">
           <mesh
             receiveShadow
-            geometry={nodes.wall_doorway_door.geometry}
-            material={materials["texture.063"]}
-            position={[-0.82, 0, 0]}
+            geometry={nodes.wall_window_closed_scaffold.geometry}
+            material={materials["texture.055"]}
+            position={[-10, 0, 7]}
+            rotation={[0, -1.571, 0]}
           />
-        </mesh>
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_shelves.geometry}
-          material={materials["texture.064"]}
-          position={[8, 0, -7]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_archedwindow_gated.geometry}
-          material={materials["texture.066"]}
-          position={[4, 0, 3]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_doorway001.geometry}
-          material={materials["texture.067"]}
-          position={[8, 0, -1]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_window_closed_scaffold002.geometry}
-          material={materials["texture.070"]}
-          position={[11, 0, 2]}
-          rotation={[0, 1.571, 0]}
-        />
-      </RigidBody>
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_scaffold.geometry}
-          material={materials["texture.071"]}
-          position={[11, 0, 10]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_endcap002.geometry}
-          material={materials["texture.058"]}
-          position={[-2, 0, -1]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_open_scaffold.geometry}
-          material={materials["texture.072"]}
-          position={[0, 0, -1]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_arched.geometry}
-          material={materials["texture.056"]}
-          position={[-3, 0, 10]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small.geometry}
-          material={materials["texture.054"]}
-          position={[-10, 0, 10]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall.geometry}
-          material={materials["texture.053"]}
-          position={[1, 0, 10]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_arched002.geometry}
-          material={materials["texture.056"]}
-          position={[-3, 0, -4]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_arched003.geometry}
-          material={materials["texture.056"]}
-          position={[-7, 0, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_arched004.geometry}
-          material={materials["texture.056"]}
-          position={[11, 0, -4]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall001.geometry}
-          material={materials["texture.053"]}
-          position={[7, 0, 10]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small001.geometry}
-          material={materials["texture.054"]}
-          position={[4, 0, 10]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small002.geometry}
-          material={materials["texture.054"]}
-          position={[-10, 0, 0]}
-          rotation={[0, 1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small003.geometry}
-          material={materials["texture.054"]}
-          position={[-3, 0, -7]}
-          rotation={[0, 1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small004.geometry}
-          material={materials["texture.054"]}
-          position={[11, 0, -7]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small005.geometry}
-          material={materials["texture.054"]}
-          position={[11, 0, -1]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small006.geometry}
-          material={materials["texture.054"]}
-          position={[4, 0, 10]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_corner_small007.geometry}
-          material={materials["texture.054"]}
-          position={[11, 0, -1]}
-          rotation={[0, -Math.PI / 2, 0]}
-        />
-      </RigidBody>
-
-      <RigidBody type="fixed" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.wall_doorway002.geometry}
-          material={materials["texture.063"]}
-          position={[11, 0, 6]}
-          rotation={[0, -1.571, 0]}
-        >
+        </MeshCollider>
+        <MeshCollider type="hull">
           <mesh
             receiveShadow
-            geometry={nodes.wall_doorway_door001.geometry}
-            material={materials["texture.063"]}
-            position={[-0.82, 0, 0]}
+            geometry={nodes.wall_endcap001.geometry}
+            material={materials["texture.058"]}
+            position={[-3, 0, 2]}
+            rotation={[0, -1.571, 0]}
           />
-        </mesh>
-      </RigidBody>
+        </MeshCollider>
 
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_cracked.geometry}
+            material={materials["texture.060"]}
+            position={[-7, 0, 10]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_cracked001.geometry}
+            material={materials["texture.060"]}
+            position={[4, 0, 7]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_cracked002.geometry}
+            material={materials["texture.060"]}
+            position={[-10, 0, 3]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_Tsplit.geometry}
+            material={materials["texture.061"]}
+            position={[-3, 0, 0]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_Tsplit001.geometry}
+            material={materials["texture.061"]}
+            position={[4, 0, -1]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_window_closed_scaffold001.geometry}
+            material={materials["texture.055"]}
+            position={[0, 0, -7]}
+            rotation={[Math.PI, 0, Math.PI]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_doorway.geometry}
+            material={materials["texture.063"]}
+            position={[4, 0, -7]}
+          >
+            <mesh
+              receiveShadow
+              geometry={nodes.wall_doorway_door.geometry}
+              material={materials["texture.063"]}
+              position={[-0.82, 0, 0]}
+            />
+          </mesh>
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_shelves.geometry}
+            material={materials["texture.064"]}
+            position={[8, 0, -7]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_archedwindow_gated.geometry}
+            material={materials["texture.066"]}
+            position={[4, 0, 3]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_doorway001.geometry}
+            material={materials["texture.067"]}
+            position={[8, 0, -1]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_window_closed_scaffold002.geometry}
+            material={materials["texture.070"]}
+            position={[11, 0, 2]}
+            rotation={[0, 1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_scaffold.geometry}
+            material={materials["texture.071"]}
+            position={[11, 0, 10]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_endcap002.geometry}
+            material={materials["texture.058"]}
+            position={[-2, 0, -1]}
+            rotation={[Math.PI, 0, Math.PI]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_open_scaffold.geometry}
+            material={materials["texture.072"]}
+            position={[0, 0, -1]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_arched.geometry}
+            material={materials["texture.056"]}
+            position={[-3, 0, 10]}
+          />
+        </MeshCollider>
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small.geometry}
+            material={materials["texture.054"]}
+            position={[-10, 0, 10]}
+            rotation={[Math.PI, 0, Math.PI]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall.geometry}
+            material={materials["texture.053"]}
+            position={[1, 0, 10]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_arched002.geometry}
+            material={materials["texture.056"]}
+            position={[-3, 0, -4]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_arched003.geometry}
+            material={materials["texture.056"]}
+            position={[-7, 0, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_arched004.geometry}
+            material={materials["texture.056"]}
+            position={[11, 0, -4]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall001.geometry}
+            material={materials["texture.053"]}
+            position={[7, 0, 10]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small001.geometry}
+            material={materials["texture.054"]}
+            position={[4, 0, 10]}
+            rotation={[Math.PI, 0, Math.PI]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small002.geometry}
+            material={materials["texture.054"]}
+            position={[-10, 0, 0]}
+            rotation={[0, 1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small003.geometry}
+            material={materials["texture.054"]}
+            position={[-3, 0, -7]}
+            rotation={[0, 1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small004.geometry}
+            material={materials["texture.054"]}
+            position={[11, 0, -7]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small005.geometry}
+            material={materials["texture.054"]}
+            position={[11, 0, -1]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small006.geometry}
+            material={materials["texture.054"]}
+            position={[4, 0, 10]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_corner_small007.geometry}
+            material={materials["texture.054"]}
+            position={[11, 0, -1]}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+        </MeshCollider>
+
+        <MeshCollider type="hull">
+          <mesh
+            receiveShadow
+            geometry={nodes.wall_doorway002.geometry}
+            material={materials["texture.063"]}
+            position={[11, 0, 6]}
+            rotation={[0, -1.571, 0]}
+          >
+            <mesh
+              receiveShadow
+              geometry={nodes.wall_doorway_door001.geometry}
+              material={materials["texture.063"]}
+              position={[-0.82, 0, 0]}
+            />
+          </mesh>
+        </MeshCollider>
+
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.shelves.geometry}
+            material={materials["texture.079"]}
+            position={[0, 0, 10]}
+            rotation={[Math.PI, 0, Math.PI]}
+          />
+        </MeshCollider>
+        <MeshCollider type="trimesh">
+          <mesh
+            receiveShadow
+            geometry={nodes.shelves001.geometry}
+            material={materials["texture.079"]}
+            position={[4.015, 0, 0.758]}
+            rotation={[0, -1.571, 0]}
+          />
+        </MeshCollider>
+      </RigidBody>
       <RigidBody type="dynamic">
         <mesh
           receiveShadow
@@ -432,7 +453,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="dynamic">
+      <RigidBody type="dynamic" mass={2}>
         <mesh
           receiveShadow
           geometry={nodes.barrel_small.geometry}
@@ -441,7 +462,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="dynamic">
+      <RigidBody type="dynamic" mass={2}>
         <mesh
           receiveShadow
           geometry={nodes.barrel_small001.geometry}
@@ -450,24 +471,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.shelves.geometry}
-          material={materials["texture.079"]}
-          position={[0, 0, 10]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </RigidBody>
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          receiveShadow
-          geometry={nodes.shelves001.geometry}
-          material={materials["texture.079"]}
-          position={[4.015, 0, 0.758]}
-          rotation={[0, -1.571, 0]}
-        />
-      </RigidBody>
       <RigidBody type="dynamic" colliders="hull">
         <mesh
           receiveShadow
@@ -533,7 +536,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="dynamic">
+      <RigidBody type="dynamic" mass={0.2}>
         <mesh
           receiveShadow
           geometry={nodes.candle_triple.geometry}
@@ -564,7 +567,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         rotation={[0.46, 0, 0]}
       />
 
-      <RigidBody type="dynamic" colliders="hull">
+      <RigidBody type="dynamic" colliders="hull" mass={3}>
         <mesh
           receiveShadow
           geometry={nodes.coffin_decorated.geometry}

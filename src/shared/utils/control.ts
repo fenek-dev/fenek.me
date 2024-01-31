@@ -9,7 +9,7 @@ export const usePersonControls = () => {
     Space: "jump",
   };
 
-  const moveFieldByKey = (key) => keys[key];
+  const moveFieldByKey = (key: keyof typeof keys) => keys[key];
 
   const [movement, setMovement] = useState({
     forward: false,
@@ -19,16 +19,16 @@ export const usePersonControls = () => {
     jump: false,
   });
 
-  const setMovementStatus = (code, status) => {
+  const setMovementStatus = (code: string, status: boolean) => {
     setMovement((m) => ({ ...m, [code]: status }));
   };
 
   useEffect(() => {
-    const handleKeyDown = (ev) => {
+    const handleKeyDown = (ev: any) => {
       setMovementStatus(moveFieldByKey(ev.code), true);
     };
 
-    const handleKeyUp = (ev) => {
+    const handleKeyUp = (ev: any) => {
       setMovementStatus(moveFieldByKey(ev.code), false);
     };
 

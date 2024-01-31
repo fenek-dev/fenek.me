@@ -9,7 +9,7 @@ import { EnvironmentSetup } from "./app/setup/environment";
 function App() {
   return (
     <div id="canvas-container">
-      <Canvas shadows dpr={[1, 2]}>
+      <Canvas shadows dpr={[1, 2]} frameloop="demand">
         <EnvironmentSetup />
         <Physics debug>
           <Room />

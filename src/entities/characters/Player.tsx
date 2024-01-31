@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { RigidBody, useRapier } from "@react-three/rapier";
+import { RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { usePersonControls } from "../../shared/utils/control";
@@ -10,10 +10,10 @@ const frontVector = new THREE.Vector3();
 const sideVector = new THREE.Vector3();
 
 export const Player = () => {
-  const playerRef = useRef();
-  const { forward, backward, left, right, jump } = usePersonControls();
+  const playerRef = useRef<any>();
+  const { forward, backward, left, right } = usePersonControls();
 
-  const rapier = useRapier();
+  // const rapier = useRapier();
 
   useFrame((state) => {
     if (!playerRef.current) return;
@@ -42,7 +42,13 @@ export const Player = () => {
 
   return (
     <>
-      <RigidBody position={[0, 2, 0]} mass={1} ref={playerRef} lockRotations>
+      <RigidBody
+        position={[0, 2, 0]}
+        mass={1}
+        ref={playerRef}
+        lockRotations
+        type="dynamic"
+      >
         <mesh castShadow>
           <capsuleGeometry args={[0.2, 1.5, 16]} />
         </mesh>

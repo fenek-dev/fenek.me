@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import React from "react";
 import { Instance, Instances, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";

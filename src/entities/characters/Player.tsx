@@ -11,6 +11,8 @@ const sideVector = new THREE.Vector3();
 
 export const Player = () => {
   const playerRef = useRef<any>();
+  const cubeRef = useRef<any>();
+
   const { forward, backward, left, right } = usePersonControls();
 
   // const rapier = useRapier();
@@ -50,9 +52,13 @@ export const Player = () => {
         type="dynamic"
       >
         <mesh castShadow>
-          <capsuleGeometry args={[0.2, 1.5, 16]} />
+          <capsuleGeometry args={[0.2, 1.5, 1]} />
         </mesh>
       </RigidBody>
+      <mesh ref={cubeRef}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={"red"} />
+      </mesh>
     </>
   );
 };

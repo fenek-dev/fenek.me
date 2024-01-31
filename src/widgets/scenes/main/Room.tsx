@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { Instance, Instances, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";
+import { Draggable } from "../../../shared/components/Draggable";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -97,9 +98,15 @@ type GLTFResult = GLTF & {
     ["texture.092"]: THREE.MeshStandardMaterial;
   };
 };
+// const prev = new THREE.Vector3(0, 0, 0);
+// const log = (e) => {
+//   const value = e.value as THREE.Vector3
+//   value.
 
+// };
 export function Room(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/models/one.glb") as GLTFResult;
+
   return (
     <group {...props} dispose={null}>
       <CuboidCollider position={[10, -1, 10]} args={[100, 1, 100]} />
@@ -479,41 +486,33 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.box_small.geometry}
-          material={materials["texture.081"]}
-          position={[-8.622, 0, 8.596]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.box_small.geometry}
+        material={materials["texture.081"]}
+        position={[-8.622, 0, 8.596]}
+      />
 
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.box_small001.geometry}
-          material={materials["texture.081"]}
-          position={[-8.259, 0, 7.56]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.box_small001.geometry}
+        material={materials["texture.081"]}
+        position={[-8.259, 0, 7.56]}
+      />
 
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.box_small002.geometry}
-          material={materials["texture.081"]}
-          position={[-7.508, 0, 8.57]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.box_small002.geometry}
+        material={materials["texture.081"]}
+        position={[-7.508, 0, 8.57]}
+      />
 
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.box_small003.geometry}
-          material={materials["texture.081"]}
-          position={[-8.155, 1, 8.181]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.box_small003.geometry}
+        material={materials["texture.081"]}
+        position={[-8.155, 1, 8.181]}
+      />
 
       <RigidBody type="dynamic">
         <mesh
@@ -566,34 +565,29 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         rotation={[0.46, 0, 0]}
       />
 
-      <RigidBody type="dynamic" colliders="hull" mass={3}>
-        <mesh
-          receiveShadow
-          geometry={nodes.coffin_decorated.geometry}
-          material={materials["HalloweenBits.005"]}
-          position={[9.239, 0, -3.954]}
-          rotation={[Math.PI, -Math.PI / 9, Math.PI]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.coffin_decorated.geometry}
+        material={materials["HalloweenBits.005"]}
+        position={[9.239, 0, -3.954]}
+        rotation={[Math.PI, -Math.PI / 9, Math.PI]}
+      />
 
-      <RigidBody type="dynamic" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.bone_A.geometry}
-          material={materials["HalloweenBits.011"]}
-          position={[3.424, 1.421, 0.38]}
-          rotation={[0, 1.229, 0]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.bone_A.geometry}
+        material={materials["HalloweenBits.011"]}
+        position={[3.424, 1.421, 0.38]}
+        rotation={[0, 1.229, 0]}
+      />
 
-      <RigidBody type="dynamic" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.candle.geometry}
-          material={materials["HalloweenBits.013"]}
-          position={[3.535, 1.23, 1.139]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.candle.geometry}
+        material={materials["HalloweenBits.013"]}
+        position={[3.535, 1.23, 1.139]}
+      />
+
       <Instances
         receiveShadow
         geometry={nodes.floor_wood_large_dark.geometry}

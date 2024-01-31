@@ -5,18 +5,20 @@ import { Room } from "./widgets/scenes/main/Room";
 import { Player } from "./entities/characters/Player";
 import { Physics } from "@react-three/rapier";
 import { EnvironmentSetup } from "./app/setup/environment";
+import { Perf } from "r3f-perf";
 
 function App() {
   return (
     <div id="canvas-container">
       <Canvas shadows dpr={[1, 2]} frameloop="demand">
         <EnvironmentSetup />
-        <Physics debug>
+        <Physics debug updateLoop="independent">
           <Room />
 
           <Player />
         </Physics>
         <PointerLockControls />
+        <Perf />
       </Canvas>
       <Stats />
     </div>

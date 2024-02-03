@@ -56,14 +56,12 @@ type GLTFResult = GLTF & {
     table_small: THREE.Mesh;
     shelves002: THREE.Mesh;
     torch: THREE.Mesh;
-    lantern_hanging: THREE.Mesh;
-    lantern_hanging001: THREE.Mesh;
-    lantern_hanging002: THREE.Mesh;
-    lantern_hanging003: THREE.Mesh;
     coffin_decorated: THREE.Mesh;
     bone_A: THREE.Mesh;
     candle: THREE.Mesh;
     floor_wood_large_dark: THREE.Mesh;
+    floor_tile_big_grate_open: THREE.Mesh;
+    floor_tile_large: THREE.Mesh;
   };
   materials: {
     ["texture.055"]: THREE.MeshStandardMaterial;
@@ -91,11 +89,12 @@ type GLTFResult = GLTF & {
     ["texture.085"]: THREE.MeshStandardMaterial;
     ["texture.089"]: THREE.MeshStandardMaterial;
     ["texture.090"]: THREE.MeshStandardMaterial;
-    ["HalloweenBits.004"]: THREE.MeshStandardMaterial;
     ["HalloweenBits.005"]: THREE.MeshStandardMaterial;
     ["HalloweenBits.011"]: THREE.MeshStandardMaterial;
     ["HalloweenBits.013"]: THREE.MeshStandardMaterial;
     ["texture.092"]: THREE.MeshStandardMaterial;
+    ["texture.093"]: THREE.MeshStandardMaterial;
+    ["texture.094"]: THREE.MeshStandardMaterial;
   };
 };
 // const prev = new THREE.Vector3(0, 0, 0);
@@ -105,15 +104,21 @@ type GLTFResult = GLTF & {
 
 // };
 export function Room(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/models/one.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/models/one.glb", true) as GLTFResult;
 
+  materials["texture.092"].roughness = 5;
+  materials["texture.053"].roughness = 5;
+  materials["texture.055"].roughness = 5;
+  materials["texture.058"].roughness = 5;
+  materials["texture.060"].roughness = 5;
+  materials["texture.061"].roughness = 5;
   return (
     <group {...props} dispose={null}>
       <CuboidCollider position={[10, -1, 10]} args={[100, 1, 100]} />
+      {/* <CuboidCollider position={[10, 3, 10]} args={[100, 1, 100]} /> */}
       <RigidBody type="fixed" colliders="hull">
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_window_closed_scaffold.geometry}
             material={materials["texture.055"]}
             position={[-10, 0, 7]}
@@ -122,7 +127,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         </MeshCollider>
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_endcap001.geometry}
             material={materials["texture.058"]}
             position={[-3, 0, 2]}
@@ -132,7 +136,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_cracked.geometry}
             material={materials["texture.060"]}
             position={[-7, 0, 10]}
@@ -141,7 +144,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_cracked001.geometry}
             material={materials["texture.060"]}
             position={[4, 0, 7]}
@@ -151,7 +153,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_cracked002.geometry}
             material={materials["texture.060"]}
             position={[-10, 0, 3]}
@@ -161,7 +162,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="trimesh">
           <mesh
-            receiveShadow
             geometry={nodes.wall_Tsplit.geometry}
             material={materials["texture.061"]}
             position={[-3, 0, 0]}
@@ -171,7 +171,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="trimesh">
           <mesh
-            receiveShadow
             geometry={nodes.wall_Tsplit001.geometry}
             material={materials["texture.061"]}
             position={[4, 0, -1]}
@@ -180,7 +179,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_window_closed_scaffold001.geometry}
             material={materials["texture.055"]}
             position={[0, 0, -7]}
@@ -190,13 +188,11 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_doorway.geometry}
             material={materials["texture.063"]}
             position={[4, 0, -7]}
           >
             <mesh
-              receiveShadow
               geometry={nodes.wall_doorway_door.geometry}
               material={materials["texture.063"]}
               position={[-0.82, 0, 0]}
@@ -206,7 +202,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_shelves.geometry}
             material={materials["texture.064"]}
             position={[8, 0, -7]}
@@ -215,7 +210,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_archedwindow_gated.geometry}
             material={materials["texture.066"]}
             position={[4, 0, 3]}
@@ -225,7 +219,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="trimesh">
           <mesh
-            receiveShadow
             geometry={nodes.wall_doorway001.geometry}
             material={materials["texture.067"]}
             position={[8, 0, -1]}
@@ -234,7 +227,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="hull">
           <mesh
-            receiveShadow
             geometry={nodes.wall_window_closed_scaffold002.geometry}
             material={materials["texture.070"]}
             position={[11, 0, 2]}
@@ -244,7 +236,6 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
         <MeshCollider type="trimesh">
           <mesh
-            receiveShadow
             geometry={nodes.wall_corner_scaffold.geometry}
             material={materials["texture.071"]}
             position={[11, 0, 10]}
@@ -495,21 +486,21 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
 
       <Draggable
         receiveShadow
-        geometry={nodes.box_small001.geometry}
+        geometry={nodes.box_small.geometry}
         material={materials["texture.081"]}
         position={[-8.259, 0, 7.56]}
       />
 
       <Draggable
         receiveShadow
-        geometry={nodes.box_small002.geometry}
+        geometry={nodes.box_small.geometry}
         material={materials["texture.081"]}
         position={[-7.508, 0, 8.57]}
       />
 
       <Draggable
         receiveShadow
-        geometry={nodes.box_small003.geometry}
+        geometry={nodes.box_small.geometry}
         material={materials["texture.081"]}
         position={[-8.155, 1, 8.181]}
       />
@@ -619,6 +610,46 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         <Instance position={[-11, 0, 9]} />
         <Instance position={[5, 0, -8]} />
         <Instance position={[9, 0, -8]} />
+      </Instances>
+
+      <Instances
+        castShadow
+        geometry={nodes.floor_tile_big_grate_open.geometry}
+        material={materials["texture.093"]}
+      >
+        <Instance position={[-1, 4, 6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[7, 4, 4]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[7, 4, -4]} rotation={[0, 0, -Math.PI]} />
+      </Instances>
+
+      <Instances
+        geometry={nodes.floor_tile_large.geometry}
+        material={materials["texture.094"]}
+      >
+        <Instance position={[-5, 4, 2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-5, 4, 6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-1, 4, 2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, 2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, 6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, 10]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-1, 4, 10]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-5, 4, 10]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-9, 4, 6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-9, 4, 2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-9, 4, 10]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, 2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[7, 4, 0]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[11, 4, 0]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[11, 4, 4]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[11, 4, 8]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[7, 4, 8]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-1, 4, -2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[-1, 4, -6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, -2]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[3, 4, -6]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[7, 4, -8]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[11, 4, -4]} rotation={[0, 0, -Math.PI]} />
+        <Instance position={[11, 4, -8]} rotation={[0, 0, -Math.PI]} />
       </Instances>
     </group>
   );

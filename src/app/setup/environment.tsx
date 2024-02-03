@@ -7,6 +7,7 @@ export const EnvironmentSetup = () => {
       <color attach="background" args={["#17171b"]} />
       <ambientLight intensity={0.6} />
       <Environment preset="night" />
+      {/* <directionalLight intensity={2} color={"#fff"} position={[10, 10, 20]} /> */}
     </>
   );
 };

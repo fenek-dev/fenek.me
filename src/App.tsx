@@ -10,7 +10,15 @@ import { Perf } from "r3f-perf";
 function App() {
   return (
     <div id="canvas-container">
-      <Canvas shadows dpr={[1, 2]} frameloop="demand">
+      <Canvas
+        shadows
+        dpr={[0.5, 1]}
+        frameloop="demand"
+        camera={{
+          near: 0.1,
+          far: 20,
+        }}
+      >
         <EnvironmentSetup />
         <Physics debug updateLoop="independent">
           <Room />

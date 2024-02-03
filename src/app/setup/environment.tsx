@@ -3,7 +3,7 @@ import { Environment } from "@react-three/drei";
 export const EnvironmentSetup = () => {
   return (
     <>
-      <fog attach="fog" args={["#fff", 3, 55]} />
+      <fog attach="fog" args={["#888", 3, 55]} />
       <color attach="background" args={["#999"]} />
       <ambientLight intensity={0.8} />
       <Environment preset="night" />

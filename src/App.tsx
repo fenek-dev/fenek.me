@@ -9,6 +9,8 @@ import { Perf } from "r3f-perf";
 import {
   BrightnessContrast,
   EffectComposer,
+  Selection,
+  Outline,
 } from "@react-three/postprocessing";
 
 function App() {
@@ -25,13 +27,16 @@ function App() {
       >
         <EnvironmentSetup />
         <Physics updateLoop="independent">
-          <EffectComposer multisampling={0}>
-            <BrightnessContrast
-              brightness={0.1} // brightness. min: -1, max: 1
-              contrast={0.3} // contrast: min -1, max: 1
-            />
+          <Selection>
+            <EffectComposer autoClear={false}>
+              <BrightnessContrast
+                brightness={0.1} // brightness. min: -1, max: 1
+                contrast={0.3} // contrast: min -1, max: 1
+              />
+              <Outline edgeStrength={40} />
+            </EffectComposer>
             <Room />
-          </EffectComposer>
+          </Selection>
 
           <Player />
         </Physics>

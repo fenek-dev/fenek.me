@@ -440,33 +440,28 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
           rotation={[0, -1.484, 0]}
         />
       </RigidBody>
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.chair.geometry}
-          material={materials["texture.075"]}
-          position={[-4, 0, 4]}
-          rotation={[0, 0.611, 0]}
-        />
-      </RigidBody>
 
-      <RigidBody type="dynamic" mass={2}>
-        <mesh
-          receiveShadow
-          geometry={nodes.barrel_small.geometry}
-          material={materials["texture.078"]}
-          position={[-8.957, 0, 1.043]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.chair.geometry}
+        material={materials["texture.075"]}
+        position={[-4, 0, 4]}
+        rotation={[0, 0.611, 0]}
+      />
 
-      <RigidBody type="dynamic" mass={2}>
-        <mesh
-          receiveShadow
-          geometry={nodes.barrel_small001.geometry}
-          material={materials["texture.078"]}
-          position={[-8.305, 0, 1.887]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.barrel_small.geometry}
+        material={materials["texture.078"]}
+        position={[-8.957, 0, 1.043]}
+      />
+
+      <Draggable
+        receiveShadow
+        geometry={nodes.barrel_small001.geometry}
+        material={materials["texture.078"]}
+        position={[-8.305, 0, 1.887]}
+      />
 
       <RigidBody type="dynamic" colliders="hull">
         <mesh
@@ -515,32 +510,27 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
         />
       </RigidBody>
 
-      <RigidBody type="dynamic">
-        <mesh
-          receiveShadow
-          geometry={nodes.chair001.geometry}
-          material={materials["texture.084"]}
-          position={[8.462, 0, 8.838]}
-          rotation={[0, -0.87, 0]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.chair001.geometry}
+        material={materials["texture.084"]}
+        position={[8.462, 0, 8.838]}
+        rotation={[0, -0.87, 0]}
+      />
 
-      <RigidBody type="dynamic" mass={0.2}>
-        <mesh
-          receiveShadow
-          geometry={nodes.candle_triple.geometry}
-          material={materials["texture.085"]}
-          position={[9.658, 1.117, 8.597]}
-        />
-      </RigidBody>
-      <RigidBody type="dynamic" colliders="hull">
-        <mesh
-          receiveShadow
-          geometry={nodes.table_small.geometry}
-          material={materials["texture.089"]}
-          position={[9.818, 0, 8.74]}
-        />
-      </RigidBody>
+      <Draggable
+        receiveShadow
+        geometry={nodes.candle_triple.geometry}
+        material={materials["texture.085"]}
+        position={[9.658, 1.117, 8.597]}
+      />
+
+      <Draggable
+        receiveShadow
+        geometry={nodes.table_small.geometry}
+        material={materials["texture.089"]}
+        position={[9.818, 0, 8.74]}
+      />
       <mesh
         receiveShadow
         geometry={nodes.shelves002.geometry}

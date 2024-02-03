@@ -115,7 +115,7 @@ export function Room(props: JSX.IntrinsicElements["group"]) {
   return (
     <group {...props} dispose={null}>
       <CuboidCollider position={[10, -1, 10]} args={[100, 1, 100]} />
-      {/* <CuboidCollider position={[10, 3, 10]} args={[100, 1, 100]} /> */}
+      <CuboidCollider position={[10, 4, 10]} args={[100, 0.1, 100]} />
       <RigidBody type="fixed" colliders="hull">
         <MeshCollider type="hull">
           <mesh

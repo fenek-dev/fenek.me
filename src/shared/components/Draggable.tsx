@@ -9,7 +9,6 @@ export const Draggable = (props: MeshProps) => {
   const ref = useRef<THREE.Mesh>(null);
   const body = useRef<RapierRigidBody>(null);
   const isHold = useRef(false);
-
   useFrame(() => {
     if (isHold.current) {
       const cameraDirection = new THREE.Vector3();
@@ -19,26 +18,28 @@ export const Draggable = (props: MeshProps) => {
 
       const vector = new THREE.Vector3();
       vector.subVectors(cubePosition, ref.current!.position);
+      body.current!.setGravityScale(0, true);
+      body.current?.setBodyType(3, true);
+      body.current?.setAngvel(new THREE.Vector3(0, 0, 0), true);
+      body.current?.setEnabledRotations(false, false, false, true);
+      body.current?.setLinvel(new THREE.Vector3(0, 0, 0), true);
 
+      body.current!.resetForces(true);
       body.current!.setTranslation(vec3(vector), true);
-      body.current!.setGravityScale(0, false);
-      body.current?.setBodyType(3, false);
     } else if (body.current?.gravityScale() === 0) {
+      body.current?.setEnabledRotations(true, true, true, true);
       body.current!.setGravityScale(1, false);
       body.current?.setBodyType(0, false);
     }
   });
 
   const bind: any = useGesture({
-    onPointerDown: (e) => {
+    onClick: (e) => {
       e.event.stopPropagation();
       const distance = (e.event as any).distance;
       if (distance < 3) {
-        isHold.current = true;
+        isHold.current = !isHold.current;
       }
-    },
-    onPointerUp: () => {
-      isHold.current = false;
     },
   });
 

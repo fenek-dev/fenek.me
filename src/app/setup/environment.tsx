@@ -3,9 +3,9 @@ import { Environment } from "@react-three/drei";
 export const EnvironmentSetup = () => {
   return (
     <>
-      <fog attach="fog" args={["#121212", 2, 25]} />
-      <color attach="background" args={["#17171b"]} />
-      <ambientLight intensity={0.6} />
+      <fog attach="fog" args={["#fff", 3, 55]} />
+      <color attach="background" args={["#999"]} />
+      <ambientLight intensity={0.8} />
       <Environment preset="night" />
       {/* <directionalLight intensity={2} color={"#fff"} position={[10, 10, 20]} /> */}
     </>

@@ -9,8 +9,11 @@ export const Draggable = (props: MeshProps) => {
   const ref = useRef<THREE.Mesh>(null);
   const body = useRef<RapierRigidBody>(null);
   const isHold = useRef(false);
+
   useFrame(() => {
     if (isHold.current) {
+      ref.current?.rotation.copy(new THREE.Euler());
+      body.current?.setRotation(new THREE.Vector4(), true);
       const cameraDirection = new THREE.Vector3();
       camera.getWorldDirection(cameraDirection);
       const cubePosition = new THREE.Vector3();
@@ -25,6 +28,7 @@ export const Draggable = (props: MeshProps) => {
       body.current?.setLinvel(new THREE.Vector3(0, 0, 0), true);
 
       body.current!.resetForces(true);
+
       body.current!.setTranslation(vec3(vector), true);
     } else if (body.current?.gravityScale() === 0) {
       body.current?.setEnabledRotations(true, true, true, true);

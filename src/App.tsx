@@ -9,7 +9,6 @@ import { Perf } from "r3f-perf";
 import {
   BrightnessContrast,
   EffectComposer,
-  Noise,
 } from "@react-three/postprocessing";
 
 function App() {
@@ -26,19 +25,18 @@ function App() {
       >
         <EnvironmentSetup />
         <Physics updateLoop="independent">
-          <Room />
+          <EffectComposer multisampling={0}>
+            <BrightnessContrast
+              brightness={0.1} // brightness. min: -1, max: 1
+              contrast={0.3} // contrast: min -1, max: 1
+            />
+            <Room />
+          </EffectComposer>
 
           <Player />
         </Physics>
         <PointerLockControls />
         <Perf />
-        <EffectComposer multisampling={0}>
-          <Noise opacity={0.005} />
-          <BrightnessContrast
-            brightness={0.1} // brightness. min: -1, max: 1
-            contrast={0.3} // contrast: min -1, max: 1
-          />
-        </EffectComposer>
       </Canvas>
       <Stats />
     </div>

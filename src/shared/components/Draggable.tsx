@@ -1,6 +1,6 @@
 import { MeshProps, useFrame, useThree } from "@react-three/fiber";
 import { RapierRigidBody, RigidBody, vec3 } from "@react-three/rapier";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGesture } from "react-use-gesture";
 import * as THREE from "three";
 
@@ -30,17 +30,14 @@ export const Draggable = (props: MeshProps) => {
   });
 
   const bind: any = useGesture({
-    onDragStart: (e) => {
+    onPointerDown: (e) => {
       e.event.stopPropagation();
       const distance = (e.event as any).distance;
       if (distance < 3) {
         isHold.current = true;
       }
     },
-    onDragEnd: () => {
-      isHold.current = false;
-    },
-    onPointerLeave: () => {
+    onPointerUp: () => {
       isHold.current = false;
     },
   });

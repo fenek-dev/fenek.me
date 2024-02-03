@@ -11,7 +11,6 @@ const sideVector = new THREE.Vector3();
 
 export const Player = () => {
   const playerRef = useRef<any>();
-  const cubeRef = useRef<any>();
 
   const { forward, backward, left, right } = usePersonControls();
 
@@ -55,10 +54,6 @@ export const Player = () => {
           <capsuleGeometry args={[0.2, 1.5, 1]} />
         </mesh>
       </RigidBody>
-      <mesh ref={cubeRef}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={"red"} />
-      </mesh>
     </>
   );
 };

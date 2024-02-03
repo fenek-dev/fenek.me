@@ -6,6 +6,11 @@ import { Player } from "./entities/characters/Player";
 import { Physics } from "@react-three/rapier";
 import { EnvironmentSetup } from "./app/setup/environment";
 import { Perf } from "r3f-perf";
+import {
+  BrightnessContrast,
+  EffectComposer,
+  Noise,
+} from "@react-three/postprocessing";
 
 function App() {
   return (
@@ -20,13 +25,20 @@ function App() {
         }}
       >
         <EnvironmentSetup />
-        <Physics debug updateLoop="independent">
+        <Physics updateLoop="independent">
           <Room />
 
           <Player />
         </Physics>
         <PointerLockControls />
         <Perf />
+        <EffectComposer multisampling={0}>
+          <Noise opacity={0.005} />
+          <BrightnessContrast
+            brightness={0.1} // brightness. min: -1, max: 1
+            contrast={0.3} // contrast: min -1, max: 1
+          />
+        </EffectComposer>
       </Canvas>
       <Stats />
     </div>

@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import "./app.css";
 import { PointerLockControls, Stats } from "@react-three/drei";
-import { Room } from "./widgets/scenes/main/Room";
 import { Player } from "./entities/characters/Player";
 import { Physics } from "@react-three/rapier";
 import { EnvironmentSetup } from "./app/setup/environment";
@@ -12,6 +11,7 @@ import {
   Selection,
   Outline,
 } from "@react-three/postprocessing";
+import { Main } from "./pages/Main";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
               />
               <Outline edgeStrength={40} />
             </EffectComposer>
-            <Room />
+            <Main />
           </Selection>
 
           <Player />

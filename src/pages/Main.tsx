@@ -4,6 +4,7 @@ import { GLTF } from "three-stdlib";
 import { Room } from "../widgets/scenes/main/Room";
 import { Objects } from "../widgets/scenes/main/Objects";
 import { Links } from "../widgets/scenes/main/Links";
+import { LinkOpener } from "../widgets/scenes/main/LinkOpener";
 
 export type MainGLTFResult = GLTF & {
   nodes: {
@@ -113,6 +114,7 @@ export function Main(props: JSX.IntrinsicElements["group"]) {
       <Room nodes={nodes} materials={materials} />
       <Objects nodes={nodes} materials={materials} />
       <Links nodes={nodes} materials={materials} />
+      <LinkOpener nodes={nodes} materials={materials} />
 
       <mesh
         position={[-9.248, 0, 6.457]}

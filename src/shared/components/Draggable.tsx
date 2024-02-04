@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { useGesture } from "react-use-gesture";
 import * as THREE from "three";
 
-export const Draggable = (props: MeshProps) => {
+export const Draggable = ({ userData, ...props }: MeshProps) => {
   const { camera } = useThree();
   const ref = useRef<THREE.Mesh>(null);
   const body = useRef<RapierRigidBody>(null);
@@ -62,9 +62,9 @@ export const Draggable = (props: MeshProps) => {
   });
 
   return (
-    <RigidBody type="dynamic" colliders="hull" ref={body}>
+    <RigidBody type="dynamic" colliders="hull" ref={body} userData={userData}>
       <Select enabled={hovered}>
-        <mesh {...props} ref={ref} {...bind()}></mesh>
+        <mesh {...props} ref={ref} {...bind()} userData={userData}></mesh>
       </Select>
     </RigidBody>
   );

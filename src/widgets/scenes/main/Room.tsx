@@ -353,17 +353,6 @@ export const Room = ({ nodes, materials }: MainGLTFProps) => {
         />
       </RigidBody>
 
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Caldron.geometry}
-          material={materials.Material}
-          position={[-8.893, 0, 4.769]}
-          scale={[400, 300, 400]}
-        />
-      </RigidBody>
-
       <Instances
         receiveShadow
         geometry={nodes.floor_wood_large_dark.geometry}

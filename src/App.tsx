@@ -26,7 +26,7 @@ function App() {
         }}
       >
         <EnvironmentSetup />
-        <Physics updateLoop="independent">
+        <Physics debug updateLoop="independent">
           <Selection>
             <EffectComposer autoClear={false}>
               <BrightnessContrast

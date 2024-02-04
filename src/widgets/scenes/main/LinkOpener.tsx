@@ -1,4 +1,3 @@
-import React from "react";
 import { MainGLTFProps } from "../../../pages/Main";
 import { CuboidCollider, RigidBody } from "@react-three/rapier";
 import * as THREE from "three";

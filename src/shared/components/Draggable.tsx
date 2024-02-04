@@ -4,8 +4,10 @@ import { RapierRigidBody, RigidBody, vec3 } from "@react-three/rapier";
 import { useRef, useState } from "react";
 import { useGesture } from "react-use-gesture";
 import * as THREE from "three";
+import { useUI } from "../../app/context/ui";
 
-export const Draggable = ({ userData, ...props }: MeshProps) => {
+export const Draggable = ({ userData, name, ...props }: MeshProps) => {
+  const { dispatch, hovered: uiHovered } = useUI();
   const { camera } = useThree();
   const ref = useRef<THREE.Mesh>(null);
   const body = useRef<RapierRigidBody>(null);
@@ -15,6 +17,7 @@ export const Draggable = ({ userData, ...props }: MeshProps) => {
 
   useFrame(() => {
     if (isHold.current) {
+      dispatch({ type: "SET_IS_HOLD", payload: true });
       body.current?.setRotation(new THREE.Vector4(), true);
       const cameraDirection = new THREE.Vector3();
       camera.getWorldDirection(cameraDirection);
@@ -33,6 +36,7 @@ export const Draggable = ({ userData, ...props }: MeshProps) => {
 
       body.current!.setTranslation(vec3(vector), true);
     } else if (body.current?.gravityScale() === 0) {
+      dispatch({ type: "SET_IS_HOLD", payload: false });
       body.current?.setEnabledRotations(true, true, true, true);
       body.current!.setGravityScale(1, false);
       body.current?.setBodyType(0, false);
@@ -54,17 +58,35 @@ export const Draggable = ({ userData, ...props }: MeshProps) => {
       if (distance < 3 && !hovered) {
         hover(true);
       }
+      if (hovered && !uiHovered) {
+        dispatch({ type: "SET_DESCRIPTION", payload: name || "" });
+        dispatch({ type: "SET_HOVERED", payload: true });
+      }
     },
     onPointerOut: (e) => {
       e.event.stopPropagation();
       hover(false);
+      dispatch({ type: "SET_DESCRIPTION", payload: "" });
+      dispatch({ type: "SET_HOVERED", payload: false });
     },
   });
 
   return (
-    <RigidBody type="dynamic" colliders="hull" ref={body} userData={userData}>
+    <RigidBody
+      type="dynamic"
+      colliders="hull"
+      ref={body}
+      userData={userData}
+      name={name}
+    >
       <Select enabled={hovered}>
-        <mesh {...props} ref={ref} {...bind()} userData={userData}></mesh>
+        <mesh
+          {...props}
+          ref={ref}
+          {...bind()}
+          userData={userData}
+          name={name}
+        ></mesh>
       </Select>
     </RigidBody>
   );

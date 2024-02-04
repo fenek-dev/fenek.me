@@ -12,38 +12,43 @@ import {
   Outline,
 } from "@react-three/postprocessing";
 import { Main } from "./pages/Main";
+import { Aim } from "./widgets/ui/aim";
+import { UIProvider } from "./app/context/ui";
 
 function App() {
   return (
     <div id="canvas-container">
-      <Canvas
-        shadows
-        dpr={[0.5, 1]}
-        frameloop="demand"
-        camera={{
-          near: 0.1,
-          far: 20,
-        }}
-      >
-        <EnvironmentSetup />
-        <Physics debug updateLoop="independent">
-          <Selection>
-            <EffectComposer autoClear={false}>
-              <BrightnessContrast
-                brightness={0.1} // brightness. min: -1, max: 1
-                contrast={0.3} // contrast: min -1, max: 1
-              />
-              <Outline edgeStrength={40} />
-            </EffectComposer>
-            <Main />
-          </Selection>
+      <UIProvider>
+        <Aim />
+        <Canvas
+          shadows
+          dpr={[0.5, 1]}
+          frameloop="demand"
+          camera={{
+            near: 0.1,
+            far: 20,
+          }}
+        >
+          <EnvironmentSetup />
+          <Physics updateLoop="independent">
+            <Selection>
+              <EffectComposer autoClear={false}>
+                <BrightnessContrast
+                  brightness={0.1} // brightness. min: -1, max: 1
+                  contrast={0.3} // contrast: min -1, max: 1
+                />
+                <Outline edgeStrength={40} />
+              </EffectComposer>
+              <Main />
+            </Selection>
 
-          <Player />
-        </Physics>
-        <PointerLockControls />
-        <Perf />
-      </Canvas>
-      <Stats />
+            <Player />
+          </Physics>
+          <PointerLockControls />
+          <Perf />
+        </Canvas>
+        <Stats />
+      </UIProvider>
     </div>
   );
 }

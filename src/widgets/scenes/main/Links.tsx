@@ -1,4 +1,3 @@
-import React from "react";
 import { MainGLTFProps } from "../../../pages/Main";
 import { Draggable } from "../../../shared/components/Draggable";
 import { MAIN_LINKS } from "../../../app/enums/links";

@@ -1,4 +1,3 @@
-import React from "react";
 import { MainGLTFProps } from "../../../pages/Main";
 import { Draggable } from "../../../shared/components/Draggable";
 import { RigidBody } from "@react-three/rapier";

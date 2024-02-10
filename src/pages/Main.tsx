@@ -6,95 +6,64 @@ import { Objects } from "../widgets/scenes/main/Objects";
 import { Links } from "../widgets/scenes/main/Links";
 import { LinkOpener } from "../widgets/scenes/main/LinkOpener";
 
-export type MainGLTFResult = GLTF & {
+type MainGLTFResult = GLTF & {
   nodes: {
-    wall_window_closed_scaffold: THREE.Mesh;
-    wall_cracked: THREE.Mesh;
-    wall_Tsplit: THREE.Mesh;
-    wall_doorway: THREE.Mesh;
-    wall_doorway_door: THREE.Mesh;
-    wall_shelves: THREE.Mesh;
-    wall_archedwindow_gated: THREE.Mesh;
-    wall_corner_scaffold: THREE.Mesh;
-    wall_open_scaffold: THREE.Mesh;
-    wall_arched: THREE.Mesh;
-    wall_corner_small: THREE.Mesh;
-    wall: THREE.Mesh;
-    table_long: THREE.Mesh;
-    chair: THREE.Mesh;
+    torture_device_006: THREE.Mesh;
+    Cube010: THREE.Mesh;
+    Cube010_1: THREE.Mesh;
+    Cube010_2: THREE.Mesh;
+    Cube010_3: THREE.Mesh;
+    Cube001: THREE.Mesh;
+    Cube008: THREE.Mesh;
     barrel_small: THREE.Mesh;
-    shelves: THREE.Mesh;
-    keg: THREE.Mesh;
-    box_small: THREE.Mesh;
-    bed_floor: THREE.Mesh;
-    candle_triple: THREE.Mesh;
-    table_small: THREE.Mesh;
-    torch: THREE.Mesh;
-    coffin_decorated: THREE.Mesh;
     bone_A: THREE.Mesh;
-    candle: THREE.Mesh;
-    floor_wood_large_dark: THREE.Mesh;
-    ["Node-Mesh"]: THREE.Mesh;
-    ["Node-Mesh_1"]: THREE.Mesh;
-    ["Node-Mesh_2"]: THREE.Mesh;
-    ["Node-Mesh_3"]: THREE.Mesh;
-    vue: THREE.Mesh;
-    Caldron: THREE.Mesh;
-    Arrow_Side: THREE.Mesh;
-    Arrow_Side_1: THREE.Mesh;
-    Sign_1: THREE.Mesh;
-    Sign_2: THREE.Mesh;
     bottle_A_labeled_brown: THREE.Mesh;
     bottle_A_labeled_green: THREE.Mesh;
-    bottle_C_green: THREE.Mesh;
     bottle_B_brown: THREE.Mesh;
-    wall_endcap: THREE.Mesh;
-    floor_tile_big_grate_open: THREE.Mesh;
-    floor_tile_large: THREE.Mesh;
+    bottle_C_green: THREE.Mesh;
+    box_small: THREE.Mesh;
+    candle: THREE.Mesh;
+    candle_triple: THREE.Mesh;
+    chair: THREE.Mesh;
+    coffin_decorated: THREE.Mesh;
+    keg: THREE.Mesh;
+    table_long: THREE.Mesh;
+    table_small: THREE.Mesh;
+    food_ingredient_steak: THREE.Mesh;
+    food_stew: THREE.Mesh;
+    FoodIngredient_Octopus: THREE.Mesh;
+    Skeleton_Axe: THREE.Mesh;
+    Skeleton_Staff: THREE.Mesh;
+    skull: THREE.Mesh;
+    table_medium_tablecloth: THREE.Mesh;
   };
   materials: {
-    ["texture.055"]: THREE.MeshStandardMaterial;
-    ["texture.060"]: THREE.MeshStandardMaterial;
-    ["texture.061"]: THREE.MeshStandardMaterial;
-    ["texture.063"]: THREE.MeshStandardMaterial;
-    ["texture.064"]: THREE.MeshStandardMaterial;
-    ["texture.066"]: THREE.MeshStandardMaterial;
-    ["texture.071"]: THREE.MeshStandardMaterial;
-    ["texture.072"]: THREE.MeshStandardMaterial;
-    ["texture.056"]: THREE.MeshStandardMaterial;
-    ["texture.054"]: THREE.MeshStandardMaterial;
-    ["texture.053"]: THREE.MeshStandardMaterial;
-    ["texture.073"]: THREE.MeshStandardMaterial;
-    ["texture.075"]: THREE.MeshStandardMaterial;
-    ["texture.078"]: THREE.MeshStandardMaterial;
-    ["texture.079"]: THREE.MeshStandardMaterial;
-    ["texture.080"]: THREE.MeshStandardMaterial;
-    ["texture.081"]: THREE.MeshStandardMaterial;
-    ["texture.082"]: THREE.MeshStandardMaterial;
-    ["texture.085"]: THREE.MeshStandardMaterial;
-    ["texture.089"]: THREE.MeshStandardMaterial;
-    ["texture.090"]: THREE.MeshStandardMaterial;
-    ["HalloweenBits.005"]: THREE.MeshStandardMaterial;
-    ["HalloweenBits.011"]: THREE.MeshStandardMaterial;
-    ["HalloweenBits.013"]: THREE.MeshStandardMaterial;
-    ["texture.092"]: THREE.MeshStandardMaterial;
-    initialShadingGroup: THREE.MeshStandardMaterial;
-    lambert13SG: THREE.MeshStandardMaterial;
-    lambert12SG: THREE.MeshStandardMaterial;
-    lambert14SG: THREE.MeshStandardMaterial;
-    vue: THREE.MeshStandardMaterial;
-    Material: THREE.MeshStandardMaterial;
-    Wood: THREE.MeshStandardMaterial;
-    Main_Dark: THREE.MeshStandardMaterial;
-    Yellow: THREE.MeshStandardMaterial;
-    Brown: THREE.MeshStandardMaterial;
-    texture: THREE.MeshStandardMaterial;
-    ["texture.001"]: THREE.MeshStandardMaterial;
-    ["texture.002"]: THREE.MeshStandardMaterial;
-    ["texture.003"]: THREE.MeshStandardMaterial;
-    ["texture.058"]: THREE.MeshStandardMaterial;
-    ["texture.093"]: THREE.MeshStandardMaterial;
-    ["texture.094"]: THREE.MeshStandardMaterial;
+    ["PaletteMaterial001.003"]: THREE.MeshStandardMaterial;
+    ["texture.010"]: THREE.MeshStandardMaterial;
+    ["Material.002"]: THREE.MeshStandardMaterial;
+    ["PaletteMaterial001.004"]: THREE.MeshStandardMaterial;
+    ["texture.009"]: THREE.MeshStandardMaterial;
+    ["texture.011"]: THREE.MeshStandardMaterial;
+    ["HalloweenBits.001"]: THREE.MeshStandardMaterial;
+    ["texture.012"]: THREE.MeshStandardMaterial;
+    ["texture.013"]: THREE.MeshStandardMaterial;
+    ["texture.014"]: THREE.MeshStandardMaterial;
+    ["texture.015"]: THREE.MeshStandardMaterial;
+    ["texture.016"]: THREE.MeshStandardMaterial;
+    ["HalloweenBits.002"]: THREE.MeshStandardMaterial;
+    ["texture.017"]: THREE.MeshStandardMaterial;
+    ["texture.018"]: THREE.MeshStandardMaterial;
+    ["HalloweenBits.003"]: THREE.MeshStandardMaterial;
+    ["texture.019"]: THREE.MeshStandardMaterial;
+    ["texture.020"]: THREE.MeshStandardMaterial;
+    ["texture.021"]: THREE.MeshStandardMaterial;
+    ["restaurant.002"]: THREE.MeshStandardMaterial;
+    ["restaurant.003"]: THREE.MeshStandardMaterial;
+    ["Atlas.001"]: THREE.MeshStandardMaterial;
+    ["skeleton.002"]: THREE.MeshStandardMaterial;
+    ["skeleton.003"]: THREE.MeshStandardMaterial;
+    ["HalloweenBits.004"]: THREE.MeshStandardMaterial;
+    ["texture.022"]: THREE.MeshStandardMaterial;
   };
 };
 
@@ -115,14 +84,6 @@ export function Main(props: JSX.IntrinsicElements["group"]) {
       <Objects nodes={nodes} materials={materials} />
       <Links nodes={nodes} materials={materials} />
       <LinkOpener nodes={nodes} materials={materials} />
-
-      <mesh
-        position={[-9.248, 0, 6.457]}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-        scale={75}
-        geometry={nodes.Arrow_Side_1.geometry}
-        material={materials.Main_Dark}
-      />
     </group>
   );
 }

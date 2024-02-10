@@ -20,15 +20,7 @@ function App() {
     <div id="canvas-container">
       <UIProvider>
         <Aim />
-        <Canvas
-          shadows
-          dpr={[0.5, 1]}
-          frameloop="demand"
-          camera={{
-            near: 0.1,
-            far: 20,
-          }}
-        >
+        <Canvas shadows dpr={[0.5, 1]} frameloop="demand">
           <EnvironmentSetup />
           <Physics updateLoop="independent">
             <Selection>

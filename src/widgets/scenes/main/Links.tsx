@@ -7,7 +7,7 @@ export const Links = ({ nodes, materials }: MainGLTFProps) => {
     <>
       <Draggable
         geometry={nodes.bottle_A_labeled_brown.geometry}
-        material={materials.texture}
+        material={materials['texture.012']}
         position={[-6.615, 1.221, 2.053]}
         scale={1}
         userData={{
@@ -17,7 +17,7 @@ export const Links = ({ nodes, materials }: MainGLTFProps) => {
       />
       <Draggable
         geometry={nodes.bottle_A_labeled_green.geometry}
-        material={materials["texture.001"]}
+        material={materials["texture.013"]}
         position={[-5.531, 1.228, 2.354]}
         scale={1}
         userData={{
@@ -27,7 +27,7 @@ export const Links = ({ nodes, materials }: MainGLTFProps) => {
       />
       <Draggable
         geometry={nodes.bottle_C_green.geometry}
-        material={materials["texture.002"]}
+        material={materials["texture.015"]}
         position={[-6.094, 1.495, 2.254]}
         scale={1}
         userData={{
@@ -37,7 +37,7 @@ export const Links = ({ nodes, materials }: MainGLTFProps) => {
       />
       <Draggable
         geometry={nodes.bottle_B_brown.geometry}
-        material={materials["texture.003"]}
+        material={materials["texture.014"]}
         position={[-7.169, 1.454, 2.045]}
         scale={1}
         userData={{

@@ -17,6 +17,7 @@ export const Draggable = ({ userData, name, ...props }: MeshProps) => {
 
   useFrame(() => {
     if (isHold.current) {
+      console.count("hello");
       dispatch({ type: "SET_IS_HOLD", payload: true });
       body.current?.setRotation(new THREE.Vector4(), true);
       const cameraDirection = new THREE.Vector3();
@@ -26,7 +27,7 @@ export const Draggable = ({ userData, name, ...props }: MeshProps) => {
 
       const vector = new THREE.Vector3();
       vector.subVectors(cubePosition, ref.current!.position);
-      body.current!.setGravityScale(0, true);
+      body.current!.setGravityScale(0, false);
       body.current?.setBodyType(3, false);
       body.current?.setAngvel(new THREE.Vector3(0, 0, 0), true);
       body.current?.setEnabledRotations(false, false, false, true);

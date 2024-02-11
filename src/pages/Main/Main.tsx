@@ -1,10 +1,10 @@
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { Room } from "../widgets/scenes/main/Room";
-import { Objects } from "../widgets/scenes/main/Objects";
-import { Links } from "../widgets/scenes/main/Links";
-import { LinkOpener } from "../widgets/scenes/main/LinkOpener";
+import { Room } from "./parts/Room";
+import { Objects } from "./parts/Objects";
+import { Links } from "./parts/Links";
+import { LinkOpener } from "./parts/LinkOpener";
 
 type MainGLTFResult = GLTF & {
   nodes: {

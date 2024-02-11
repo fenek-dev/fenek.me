@@ -1,4 +1,4 @@
-import { MainGLTFProps } from "../../../pages/Main";
+import { MainGLTFProps } from "../Main";
 import { Draggable } from "../../../shared/components/Draggable";
 import { MAIN_LINKS } from "../../../app/enums/links";
 

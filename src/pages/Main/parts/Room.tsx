@@ -1,6 +1,5 @@
-import { MainGLTFProps } from "../../../pages/Main";
+import { MainGLTFProps } from "../Main";
 import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";
-import { Instance, Instances } from "@react-three/drei";
 
 export const Room = ({ nodes, materials }: MainGLTFProps) => {
   console.log(nodes);

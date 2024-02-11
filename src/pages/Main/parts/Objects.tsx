@@ -1,18 +1,21 @@
-import { MainGLTFProps } from "../../../pages/Main";
+import { MainGLTFProps } from "../Main";
 import { Draggable } from "../../../shared/components/Draggable";
 import { RigidBody } from "@react-three/rapier";
 
 export const Objects = ({ nodes, materials }: MainGLTFProps) => {
   return (
     <>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.torture_device_006.geometry}
-        material={materials["PaletteMaterial001.003"]}
-        position={[5.498, 0, 0.142]}
-        scale={100}
-      />
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.torture_device_006.geometry}
+          material={materials["PaletteMaterial001.003"]}
+          position={[5.498, 0, 0.142]}
+          scale={100}
+        />
+      </RigidBody>
+
       <Draggable
         castShadow
         receiveShadow
@@ -51,30 +54,39 @@ export const Objects = ({ nodes, materials }: MainGLTFProps) => {
         position={[-6.914, 0, 3.773]}
         rotation={[-Math.PI, 0.436, -Math.PI]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.coffin_decorated.geometry}
-        material={materials["HalloweenBits.008"]}
-        position={[8.427, 0, -5.302]}
-        rotation={[0, -1.547, 0]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.keg.geometry}
-        material={materials["texture.043"]}
-        position={[2.033, 0, 8.242]}
-        rotation={[0, 1.383, 0]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.table_long.geometry}
-        material={materials["texture.044"]}
-        position={[-7.163, 0.112, 2.023]}
-        rotation={[0, -1.484, 0]}
-      />
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.coffin_decorated.geometry}
+          material={materials["HalloweenBits.008"]}
+          position={[8.427, 0, -5.302]}
+          rotation={[0, -1.547, 0]}
+        />
+      </RigidBody>
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.keg.geometry}
+          material={materials["texture.043"]}
+          position={[2.033, 0, 8.242]}
+          rotation={[0, 1.383, 0]}
+        />
+      </RigidBody>
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.table_long.geometry}
+          material={materials["texture.044"]}
+          position={[-7.163, 0.112, 2.023]}
+          rotation={[0, -1.484, 0]}
+        />
+      </RigidBody>
       <Draggable
         castShadow
         receiveShadow
@@ -124,13 +136,16 @@ export const Objects = ({ nodes, materials }: MainGLTFProps) => {
         rotation={[2.577, 1.533, Math.PI]}
         scale={0.75}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.table_medium_tablecloth.geometry}
-        material={materials["texture.045"]}
-        position={[4.115, 0, -2.411]}
-      />
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.table_medium_tablecloth.geometry}
+          material={materials["texture.045"]}
+          position={[4.115, 0, -2.411]}
+        />
+      </RigidBody>
       <Draggable
         castShadow
         receiveShadow
@@ -140,14 +155,17 @@ export const Objects = ({ nodes, materials }: MainGLTFProps) => {
         rotation={[-Math.PI / 2, 0, 0.367]}
         scale={[50, 40, 30]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.group804261949.geometry}
-        material={materials.mat20}
-        position={[-2.126, 1.467, -3.071]}
-        scale={2}
-      />
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.group804261949.geometry}
+          material={materials.mat20}
+          position={[-2.126, 1.467, -3.071]}
+          scale={2}
+        />
+      </RigidBody>
       <Draggable
         castShadow
         receiveShadow
@@ -170,14 +188,17 @@ export const Objects = ({ nodes, materials }: MainGLTFProps) => {
         material={materials["texture.041"]}
         position={[-8.939, 0, 7.531]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.keg001.geometry}
-        material={materials["texture.043"]}
-        position={[2.192, 0, 6.294]}
-        rotation={[-Math.PI, 1.538, -Math.PI]}
-      />
+
+      <RigidBody type="dynamic" colliders="hull">
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.keg001.geometry}
+          material={materials["texture.043"]}
+          position={[2.192, 0, 6.294]}
+          rotation={[-Math.PI, 1.538, -Math.PI]}
+        />
+      </RigidBody>
       <Draggable
         castShadow
         receiveShadow

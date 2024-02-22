@@ -1,10 +1,11 @@
+import { Layout } from "./app/layout/Layout";
 import { Button } from "./shared/components/ui/button";
 
 function App() {
   return (
-    <div>
+    <Layout>
       <Button>Hello</Button>
-    </div>
+    </Layout>
   );
 }
 
